@@ -31,6 +31,19 @@
             </summary>
             <param name="userParam">The new user to create</param>
         </member>
+        <member name="M:Capstone.DAO.CoffeeShopDAO.GetAllCoffeeShops">
+            <summary>
+            Gets a list of all coffee shops to display to user
+            </summary>
+            <returns>a list of coffee shops</returns>
+        </member>
+        <member name="M:Capstone.DAO.CoffeeShopDAO.GetCoffeeShopFromDataReader(System.Data.SqlClient.SqlDataReader)">
+            <summary>
+            Method to get a singular coffee shop by the sql statement, can only be used within another method providing a reader
+            </summary>
+            <param name="reader"></param>
+            <returns>coffee shop object</returns>
+        </member>
         <member name="T:Capstone.Models.LoginResponse">
             <summary>
             Model to return upon successful login (user data + token)
