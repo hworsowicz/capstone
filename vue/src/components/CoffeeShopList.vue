@@ -2,7 +2,6 @@
 <div>
     <h2>Coffee Shops</h2>
     <router-link :to="{name: 'home'}"> </router-link>
-    All
     <p v-for="c in coffeeShops" v-bind:key="c.coffeeShopId">{{c.shopName}}</p>
 </div>
 
@@ -34,5 +33,8 @@ export default {
 </script>
 
 <style>
+div {
+    font-family: 'Quicksand', sans-serif;
+}
 
 </style>
