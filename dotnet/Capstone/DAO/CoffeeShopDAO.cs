@@ -1,0 +1,52 @@
+﻿using Capstone.Models;
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+
+namespace Capstone.DAO
+{
+    public class CoffeeShopDAO : ICoffeeShopDAO 
+    {
+        private readonly string connectionString;
+        public CoffeeShopDAO(string connectionString)
+        {
+            this.connectionString = connectionString;
+        }
+        /// <summary>
+        /// Gets a list of all coffee shops to display to user
+        /// </summary>
+        /// <returns>a list of coffee shops</returns>
+        public List<CoffeeShop> GetAllCoffeeShops()
+        {
+            List<CoffeeShop> result = new List<CoffeeShop>();
+
+            const string sql = "SELECT shop_name, shop_location, shop_has_spirits  FROM coffee_shops";
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while(reader.Read())
+                {
+                    CoffeeShop coffeeShop = GetCoffeeShopFromDataReader(reader);
+
+                    result.Add(coffeeShop);
+                }
+            }
+            return result;
+        }
+        /// <summary>
+        /// Method to get a singular coffee shop by the sql statement, can only be used within another method providing a reader
+        /// </summary>
+        /// <param name="reader"></param>
+        /// <returns>coffee shop object</returns>
+        private CoffeeShop GetCoffeeShopFromDataReader(SqlDataReader reader)
+        {
+            CoffeeShop coffeeShop = new CoffeeShop();
+            coffeeShop.ShopName = Convert.ToString(reader["shop_name"]);
+            coffeeShop.ShopLocation = Convert.ToString(reader["shop_location"]);
+            coffeeShop.HasSpirits = Convert.ToBoolean(reader["shop_has_spirits"]);
+            return coffeeShop;
+        }
+    }
+}
