@@ -24,7 +24,7 @@ export default new Vuex.Store({
   state: {
     token: currentToken || '',
     user: currentUser || {} ,// If a user is an admin, their user.role will be 'admin'
-    coffeeShops: [],
+    coffeeShops: [], // This an array that pulling from C# which is pulling from SQL (all of the coffeeShops in the SQL Database)
   },
   mutations: {
     SET_AUTH_TOKEN(state, token) {
@@ -45,7 +45,7 @@ export default new Vuex.Store({
     },
     SET_COFFEE_SHOPS(state, coffeeshops)
     {
-      state.coffeeShops = coffeeshops;
+      state.coffeeShops = coffeeshops; // this becomes the response.data
     }
   }
 })
