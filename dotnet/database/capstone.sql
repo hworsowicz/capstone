@@ -35,26 +35,27 @@ CREATE TABLE coffee_shops (
 	shop_name varchar(50) NOT NULL,
 	shop_location nvarchar(150) NOT NULL,
 	about_shop nvarchar (500),
-	shop_has_food bit, 
+	shop_has_spirits bit, 
 	CONSTRAINT PK_shop_id PRIMARY KEY (shop_id)
 	)
 
-INSERT INTO coffee_shops (shop_name, shop_location, about_shop, shop_has_food) VALUES 
-('Stauf''s Italian Village', '1334 Neil Ave, Columbus, OH 43201', NULL, 1),
-('Stauf''s German Village', '627 S. 3rd St. Columbus, OH 43206', NULL, 1),
-('Stauf''s Grandview', '1277 Grandview Ave, Columbus, OH 43212', NULL, 1),
-('Fox in the Snow', '1031 N 4th St, Columbus, OH 43201', NULL, 1),
-('Roaming Goat', '849 N High St, Columbus, OH 43215', NULL, 1),
+
+INSERT INTO coffee_shops (shop_name, shop_location, about_shop, shop_has_spirits) VALUES 
+('Stauf''s Italian Village', '1334 Neil Ave, Columbus, OH 43201', NULL, 0),
+('Stauf''s German Village', '627 S. 3rd St. Columbus, OH 43206', NULL, 0),
+('Stauf''s Grandview', '1277 Grandview Ave, Columbus, OH 43212', NULL, 0),
+('Fox in the Snow', '1031 N 4th St, Columbus, OH 43201', NULL, 0),
+('Roaming Goat', '849 N High St, Columbus, OH 43215', NULL, 0),
 ('Chocolate Cafe', '1855 Northwest Blvd, Columbus, OH 43212', NULL, 1),
 ('Winans Chocolate + Coffee + Wine', '1125 Yard St, Grandview Heights, OH 43212', NULL, 1),
-('The Roosevelt Coffeehouse at Gravity', '462 W Broad St, Columbus, OH 43215', NULL, 1),
-('The Roosevelt Coffeehouse', '300 E Long St, Columbus, OH 43215', NULL, 1),
+('The Roosevelt Coffeehouse at Gravity', '462 W Broad St, Columbus, OH 43215', NULL, 0),
+('The Roosevelt Coffeehouse', '300 E Long St, Columbus, OH 43215', NULL, 0),
 ('Global Gallery', '3535 N High St, Columbus, OH 43214', NULL , 1),
-('Cafe De Nook','175 S 3rd St, Columbus, OH 43215', NULL, 1),
-('One Line', '745 N High St, Columbus, OH 43215', NULL, 1),
-('Parable Coffee', '149 S High St, Columbus, OH 43215', NULL, 1),
-('Thirdway Cafe', '3058 W Broad St, Columbus, OH 43204', NULL, 1);
+('Cafe De Nook','175 S 3rd St, Columbus, OH 43215', NULL, 0),
+('One Line', '745 N High St, Columbus, OH 43215', NULL, 0),
+('Parable Coffee', '149 S High St, Columbus, OH 43215', NULL, 0),
+('Thirdway Cafe', '3058 W Broad St, Columbus, OH 43204', NULL, 0);
 GO
 
-SELECT * FROM coffee_shops
+SELECT shop_name, shop_location, shop_has_spirits  FROM coffee_shops
 
