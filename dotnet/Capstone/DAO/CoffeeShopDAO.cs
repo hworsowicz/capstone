@@ -20,7 +20,7 @@ namespace Capstone.DAO
         {
             List<CoffeeShop> result = new List<CoffeeShop>();
 
-            const string sql = "SELECT shop_id, shop_name, shop_location, shop_has_spirits, about_shop FROM coffee_shops";
+            const string sql = "SELECT shop_id, shop_name, shop_location, shop_has_spirits, image_path, about_shop FROM coffee_shops";
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
@@ -47,6 +47,7 @@ namespace Capstone.DAO
             coffeeShop.ShopName = Convert.ToString(reader["shop_name"]);
             coffeeShop.ShopLocation = Convert.ToString(reader["shop_location"]);
             coffeeShop.HasSpirits = Convert.ToBoolean(reader["shop_has_spirits"]);
+            coffeeShop.ImagePath = Convert.ToString(reader["image_path"]);
             coffeeShop.About = Convert.ToString(reader["about_shop"]);
             return coffeeShop;
         }

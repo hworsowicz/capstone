@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import CoffeeShopList from '../views/CoffeeShopList.vue';
+import CoffeeShopList from '../components/CoffeeShopList.vue';
 
 export default {
     components: {

@@ -2,7 +2,7 @@
 <div class="coffee-shop-list">
     <h2>Coffee Shops</h2>
     <router-link :to="{name: 'home'}"> </router-link>
-    <coffee-shop-card class="car" v-bind:coffeeShop="c" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId"/>
+    <coffee-shop-card  v-bind:coffeeShop="c" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId"/>
 </div>
 
 </template>
@@ -40,24 +40,12 @@ export default {
 <style>
 div .coffee-shop-list {
     font-family: 'Quicksand', sans-serif;
-    background-color: magenta;
+    background-color: #FCDEC0;
     display: grid;
     grid-template-areas: "card card map";
     grid-template-columns: 1fr 1fr 2fr;
 }
-.card{
-    grid-area: card;
-    border: 2px solid black;
-    border-radius: 10px;
-    width: 250px;
-    height: 300px;
-    margin: 20px;
-}
-.card .shop-name{
-    font-size: 1.5rem;
-}
-.card .location {
-    font-size: 1.5;
-}
+
+
 
 </style>

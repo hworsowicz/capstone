@@ -1,11 +1,10 @@
 <template>
     <div>
-
      <div class="card">
-      <router-link v-bind:to="{name: 'home'}">
+      <img class="pic" :src="require('../Images/' + coffeeShop.imagePath)" alt="Coffee Cups" />
+      <router-link class="name" v-bind:to="{name: 'home'}">
       <h2 class="shop-name">{{coffeeShop.shopName}}</h2>
       </router-link>
-      <img src="../../Images/Filler.jpg" alt="Coffee Cups" />
       <p class="location">{{coffeeShop.shopLocation}}</p>
   </div>
 
@@ -30,14 +29,34 @@ export default {
 .card{
     border: 2px solid black;
     border-radius: 10px;
-    width: 250px;
-    height: 300px;
+    width: 150px;
+    height: 200px;
     margin: 20px;
+    background: rgba(58, 147, 206, 0.692);
+    
 }
+
 .card .shop-name{
-    font-size: 1.5rem;
+    font-size: .75rem;
+    font-weight: bold;
+    color: #FCDEC0;
+    
 }
-.card .location {
-    font-size: 1.5;
+.card p.location {
+    font-size: 15px;
+    padding-left: 7px;
+}
+.card .name {
+    text-decoration: none;
+    padding-left: 7px;
+}
+.card .name:hover {
+    text-decoration: underline;
+}
+.pic{
+ border-radius: 10px;
+ height: 200px; 
+
+
 }
 </style>
