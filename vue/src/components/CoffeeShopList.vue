@@ -3,6 +3,7 @@
     <h2>Coffee Shops</h2>
     <router-link :to="{name: 'home'}"> </router-link>
     <coffee-shop-card  v-bind:coffeeShop="c" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId"/>
+    <coffee-shop-details v-bind:coffeeShop="c" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId"/>
 </div>
 
 </template>
@@ -10,11 +11,12 @@
 <script>
 import CoffeeShopServices from "../services/CoffeeShopServices";
 import CoffeeShopCard from "../components/CoffeeShopCard.vue";
+import CoffeeShopDetails from "../views/CoffeeShopDetails.vue";
 
 export default {
     name: "coffee-shops",
     components:{
-        CoffeeShopCard
+        CoffeeShopCard, CoffeeShopDetails
     },
   
     methods: {

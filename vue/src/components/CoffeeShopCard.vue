@@ -2,7 +2,7 @@
     <div>
      <div class="card">
       <img class="pic" :src="require('../Images/' + coffeeShop.imagePath)" alt="Coffee Cups" />
-      <router-link class="name" v-bind:to="{name: 'home'}">
+      <router-link class="name" v-bind:to="{name: 'details', params: {coffeeShopId: coffeeShop.shopId}}">
       <h2 class="shop-name">{{coffeeShop.shopName}}</h2>
       </router-link>
       <p class="location">{{coffeeShop.shopLocation}}</p>
@@ -43,7 +43,7 @@ export default {
     
 }
 .card p.location {
-    font-size: 15px;
+    font-size: 10px;
     padding-left: 7px;
 }
 .card .name {
