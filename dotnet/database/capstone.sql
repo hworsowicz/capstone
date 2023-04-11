@@ -28,6 +28,7 @@ CREATE TABLE users (
 -- These values should not be kept when going to Production
 INSERT INTO users (username, password_hash, salt, user_role) VALUES ('user','Jg45HuwT7PZkfuKTz6IB90CtWY4=','LHxP4Xh7bN0=','user');
 INSERT INTO users (username, password_hash, salt, user_role) VALUES ('admin','YhyGVQ+Ch69n4JMBncM4lNF/i9s=', 'Ar/aB2thQTI=','admin');
+INSERT INTO users (username, password_hash, salt, user_role) VALUES ('parker','2faHsM4nx5IVczbM/AryqkIiOQg=','ZJhvbTfwCts=', 'user');
 GO
 
 CREATE TABLE coffee_shops (
@@ -43,6 +44,15 @@ CREATE TABLE coffee_shops (
 	website nvarchar (150),
 	CONSTRAINT PK_shop_id PRIMARY KEY (shop_id)
 	)
+
+	CREATE TABLE user_favorites (
+	user_id int NOT NULL,
+	shop_id int NOT NULL,
+	CONSTRAINT PK_user_shop_favorites PRIMARY KEY (user_id, shop_id), 
+	CONSTRAINT FK_user_favorites FOREIGN KEY (user_id) REFERENCES users (user_id),
+	CONSTRAINT FK_coffee_shop_favorites FOREIGN KEY (shop_id) REFERENCES coffee_shops (shop_id)
+	);
+
 
 
 INSERT INTO coffee_shops (shop_name, shop_location, about_shop, image_path, shop_has_spirits, hours_weekdays, hours_weekends, price_range, website) VALUES 
@@ -62,5 +72,15 @@ INSERT INTO coffee_shops (shop_name, shop_location, about_shop, image_path, shop
 ('Thirdway Cafe', '3058 W Broad St, Columbus, OH 43204', NULL, 'thirdway.jpg', 0, NULL, NULL, NULL, NULL);
 GO
 
+
+
 SELECT shop_id, shop_name, shop_location, shop_has_spirits, image_path, about_shop, hours_weekdays,price_range, website  FROM coffee_shops
+
+select * from users
+
+INSERT INTO user_favorites (user_id, shop_id) VALUES
+	(1, 1);
+INSERT INTO user_favorites (user_id, shop_id) VALUES
+	(3, 5);
+SELECT * FROM user_favorites
 
