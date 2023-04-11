@@ -4,6 +4,7 @@
     <h2>{{coffeeShop.hoursWeekdays}}</h2>
     <p class="about">{{coffeeShop.about}}</p>
      <p class="price">{{coffeeShop.priceRange}}</p>
+     <p>{{coffeeShop.isFavorite}}</p>
     <coffee-shop-card/>
 
 
@@ -19,7 +20,7 @@ export default {
   components: {  CoffeeShopCard },
   data(){
       return{
-          coffeeShop: undefined
+          coffeeShop: {}
       }
   },
   created(){

@@ -11,5 +11,6 @@ namespace Capstone.DAO
         CoffeeShop GetCoffeeShopFromDataReader(SqlDataReader reader);
 
         CoffeeShop GetCoffeeShopById(int shopId);
+        List<CoffeeShop> GetUserFavorites(int userId);
     }
 }

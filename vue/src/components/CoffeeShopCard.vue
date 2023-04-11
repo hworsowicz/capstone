@@ -6,6 +6,9 @@
       <h2 class="shop-name">{{coffeeShop.shopName}}</h2>
       </router-link>
       <p class="location">{{coffeeShop.shopLocation}}</p>
+      <button class="mark-fav" v-on:click.prevent="setFavorite(true)" v-if="!coffeeShop.isFavorite"><i class="far fa-heart"></i></button>
+      <button class="mark-Notfav" v-on:click.prevent="setFavorite(false)" v-if="coffeeShop.isFavorite"><i class="fas fa-heart" style="color: #f54747;"></i>
+</button>
   </div>
 
     </div>
@@ -21,6 +24,12 @@ export default {
     props: {
         coffeeShop: Object,
     },
+    methods: {
+        setFavorite(value)
+        {
+            this.$store.commit("SET_USER_FAVORITES_STATUS", {coffeeShop: this.coffeeShop, value: value});
+        }
+    }
    
 }
 </script>

@@ -13,6 +13,7 @@
         public string HoursWeekends { get; set; }
         public string PriceRange { get; set; }
         public string Website { get; set; }
+        public bool IsFavorite { get; set; }
 
      
     }

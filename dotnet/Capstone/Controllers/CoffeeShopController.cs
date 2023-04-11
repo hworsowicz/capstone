@@ -1,5 +1,6 @@
 ﻿using Capstone.DAO;
 using Capstone.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -15,6 +16,17 @@ namespace Capstone.Controllers
         public CoffeeShopController(ICoffeeShopDAO coffeeShop)
         {
             this.coffeeShopDAO = coffeeShop;
+        }
+
+        [HttpGet("favorites")]
+        [Authorize]
+       
+        public ActionResult GetListOfFavorites()
+        {
+            int userId = int.Parse(User.FindFirst("sub").Value);
+            List <CoffeeShop> favorites = coffeeShopDAO.GetUserFavorites(userId);
+
+            return Ok(favorites);
         }
         [HttpGet()]
         public ActionResult GetAllCoffeeShops()

@@ -60,6 +60,37 @@ namespace Capstone.DAO
 
             }
         }
+        public List<CoffeeShop> GetUserFavorites(int userId)
+        {
+            List<CoffeeShop> result = new List<CoffeeShop>();
+
+            const string sql = "SELECT c.shop_name, c.shop_id, " +
+                "  (CASE WHEN EXISTS(SELECT 1 FROM user_favorites uf WHERE uf.shop_id = c.shop_id AND uf.user_id = @userId) THEN 1 ELSE 0 END) AS IsFavorite FROM coffee_shops c";
+
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@userId", userId);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    CoffeeShop currentFavorites = new CoffeeShop();
+                    currentFavorites.ShopId = Convert.ToInt32(reader["shop_id"]);
+                    currentFavorites.ShopName = Convert.ToString(reader["shop_name"]);
+                    currentFavorites.IsFavorite = Convert.ToBoolean(reader["IsFavorite"]);
+                   
+
+                    result.Add(currentFavorites);
+                }
+
+            }
+            return result;
+        }
+
+
         /// <summary>
         /// Method to get a singular coffee shop by the sql statement, can only be used within another method providing a reader
         /// </summary>

@@ -18,17 +18,6 @@ namespace Capstone.Controllers
             this.userDAO = userDAO;
         }
 
-        [HttpGet("{userId}")]
-        [Authorize]
-        public ActionResult GetListOfFavorites(int userId)
-        {
-            List<UserFavorites> favorites = userDAO.GetUserFavorites(userId);
-            if(favorites == null)
-            {
-                return NotFound();
-            }
-            return Ok(favorites);
-        }
 
     }
 }

@@ -100,10 +100,14 @@ INSERT INTO user_favorites (user_id, shop_id) VALUES
 
 	Select c.shop_id, c.shop_name FROM coffee_shops c
 	INNER JOIN user_favorites uf ON uf.shop_id = c.shop_id
-	INNER JOIN users u ON u.user_id = uf.user_id WHERE u.user_id = @userID;
-
-	SELECT c.shop_name, uf.*, (case when uf.shop_id is null then 0 else 1 end) as Favorite FROM coffee_shops c
-	LEFT OUTER JOIN user_favorites uf ON uf.shop_id = c.shop_id
-	WHERE uf.user_id = 1 OR uf.user_id is null
+	INNER JOIN users u ON u.user_id = uf.user_id WHERE u.user_id = 1;
 
 
+	SELECT c.shop_name, c.shop_id,
+		   (CASE WHEN EXISTS(SELECT 1 FROM user_favorites uf WHERE uf.shop_id = c.shop_id AND uf.user_id = 1)
+					THEN 1
+					ELSE 0 END) AS IsFavorite
+	FROM coffee_shops c
+
+
+	select * from coffee_shops

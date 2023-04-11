@@ -24,9 +24,7 @@ namespace Capstone.DAO
         {
             List<UserFavorites> result = new List<UserFavorites>();
 
-            const string sql = "Select c.shop_id, c.shop_name FROM coffee_shops c "+
-                "INNER JOIN user_favorites uf ON uf.shop_id = c.shop_id "+
-                "INNER JOIN users u ON u.user_id = uf.user_id WHERE u.user_id = @userId";
+            const string sql = "SELECT c.shop_name, c.shop_id,\r\n\t\t   (CASE WHEN EXISTS(SELECT 1 FROM user_favorites uf WHERE uf.shop_id = c.shop_id AND uf.user_id = 1)\r\n\t\t\t\t\tTHEN 1\r\n\t\t\t\t\tELSE 0 END) AS IsFavorite\r\n\tFROM coffee_shops c";
 
 
             using (SqlConnection conn = new SqlConnection(connectionString))
