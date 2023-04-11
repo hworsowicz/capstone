@@ -23,6 +23,7 @@ export default {
         getCoffeeShops(){
             CoffeeShopServices.getAllCoffeeShops()
         .then((response) => {
+            console.log(response.data)
             this.$store.commit("SET_COFFEE_SHOPS", response.data);
         })
         .catch(err => console.error("Sorry could not load shops", err))

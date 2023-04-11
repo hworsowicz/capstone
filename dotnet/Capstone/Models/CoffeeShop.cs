@@ -11,7 +11,7 @@
 
         public string HoursWeekdays { get; set; }
         public string HoursWeekends { get; set; }
-        public int PriceRange { get; set; }
+        public string PriceRange { get; set; }
         public string Website { get; set; }
 
      

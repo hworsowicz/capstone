@@ -9,5 +9,7 @@ namespace Capstone.DAO
         List<CoffeeShop> GetAllCoffeeShops();
 
         CoffeeShop GetCoffeeShopFromDataReader(SqlDataReader reader);
+
+        CoffeeShop GetCoffeeShopById(int shopId);
     }
 }
