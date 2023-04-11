@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using Capstone.Models;
 using Capstone.Security;
@@ -17,6 +18,36 @@ namespace Capstone.DAO
         public UserSqlDAO(string dbConnectionString)
         {
             connectionString = dbConnectionString;
+        }
+
+        public List<UserFavorites> GetUserFavorites (int userId)
+        {
+            List<UserFavorites> result = new List<UserFavorites>();
+
+            const string sql = "Select c.shop_id, c.shop_name FROM coffee_shops c "+
+                "INNER JOIN user_favorites uf ON uf.shop_id = c.shop_id "+
+                "INNER JOIN users u ON u.user_id = uf.user_id WHERE u.user_id = @userId";
+
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@userId", userId);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                while(reader.Read())
+                {
+                    UserFavorites currentFavorites = new UserFavorites();
+                    currentFavorites.ShopId = Convert.ToInt32(reader["shop_id"]);
+                    currentFavorites.ShopName = Convert.ToString(reader["shop_name"]);
+                    currentFavorites.UserId = Convert.ToInt32(reader["user_id"]);
+
+                    result.Add(currentFavorites);
+                }
+
+            }
+                 return result;
         }
 
         public User GetUser(string username)
