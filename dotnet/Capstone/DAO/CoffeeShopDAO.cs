@@ -35,6 +35,31 @@ namespace Capstone.DAO
             }
             return result;
         }
+        public CoffeeShop GetCoffeeShopById(int shopId)
+        {
+            const string sql = "SELECT shop_id, shop_name, shop_location, shop_has_spirits, image_path, about_shop, hours_weekdays, hours_weekends, price_range, website  FROM coffee_shops WHERE shop_id = @shopId";
+            using(SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+                SqlCommand cmd = new SqlCommand(sql, conn);
+
+                cmd.Parameters.AddWithValue("@shopId", shopId);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                if(reader.Read())
+                {
+                    CoffeeShop coffeeShop = GetCoffeeShopFromDataReader(reader);
+                    return coffeeShop;
+                    
+                }
+                else
+                {
+                    return null;
+                }
+                
+
+            }
+        }
         /// <summary>
         /// Method to get a singular coffee shop by the sql statement, can only be used within another method providing a reader
         /// </summary>
@@ -51,7 +76,7 @@ namespace Capstone.DAO
             coffeeShop.About = Convert.ToString(reader["about_shop"]);
             coffeeShop.HoursWeekdays = Convert.ToString(reader["hours_weekdays"]);
             coffeeShop.HoursWeekends = Convert.ToString(reader["hours_weekends"]);
-            coffeeShop.PriceRange = Convert.ToInt32(reader["price_range"]);
+            coffeeShop.PriceRange = Convert.ToString(reader["price_range"]);
             coffeeShop.Website = Convert.ToString(reader["website"]);
             return coffeeShop;
         }

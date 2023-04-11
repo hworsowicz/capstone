@@ -23,5 +23,15 @@ namespace Capstone.Controllers
 
             return Ok(allShops);
         }
+        [HttpGet("{shopId}")]
+        public ActionResult GetCoffeeShopById(int shopId)
+        {
+            CoffeeShop shop = coffeeShopDAO.GetCoffeeShopById(shopId);
+            if(shop == null)
+            {
+                return NotFound();
+            }
+            return Ok(shop);
+        }
     }
 }
