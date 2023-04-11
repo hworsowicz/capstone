@@ -1,7 +1,7 @@
 <template>
     <div>
      <div class="card">
-      <img class="pic" :src="require('../Images/' + coffeeShop.imagePath)" alt="Coffee Cups" />
+      <img class="pic" :src="require('../Images/' + coffeeShop.imagePath)" alt="Coffee shop image" />
       <router-link class="name" v-bind:to="{name: 'details', params: {coffeeShopId: coffeeShop.shopId}}">
       <h2 class="shop-name">{{coffeeShop.shopName}}</h2>
       </router-link>

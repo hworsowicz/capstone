@@ -79,8 +79,31 @@ SELECT shop_id, shop_name, shop_location, shop_has_spirits, image_path, about_sh
 select * from users
 
 INSERT INTO user_favorites (user_id, shop_id) VALUES
-	(1, 1);
-INSERT INTO user_favorites (user_id, shop_id) VALUES
-	(3, 5);
-SELECT * FROM user_favorites
+	(1, 1),
+	(3, 5),
+	(1, 4),
+	(1, 8),
+	(1, 12),
+	(1, 3),
+	(1, 9),
+	(3, 2),
+	(3, 8),
+	(3, 13),
+	(3, 12),
+	(3, 14),
+	(2, 1),
+	(2, 4),
+	(2, 6),
+	(2, 2),
+	(2, 11),
+	(2, 12);
+
+	Select c.shop_id, c.shop_name FROM coffee_shops c
+	INNER JOIN user_favorites uf ON uf.shop_id = c.shop_id
+	INNER JOIN users u ON u.user_id = uf.user_id WHERE u.user_id = @userID;
+
+	SELECT c.shop_name, uf.*, (case when uf.shop_id is null then 0 else 1 end) as Favorite FROM coffee_shops c
+	LEFT OUTER JOIN user_favorites uf ON uf.shop_id = c.shop_id
+	WHERE uf.user_id = 1 OR uf.user_id is null
+
 

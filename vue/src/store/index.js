@@ -47,9 +47,10 @@ export default new Vuex.Store({
     {
       state.coffeeShops = coffeeshops; // this becomes the response.data
     },
-    SET_SINGLE_COFFEE_SHOP(state, id)
+    SET_USER_FAVORITES(state, userId)
     {
-      state.coffeeShops = id;
+      state.coffeeShops.shopId = userId
     }
+
   }
 })

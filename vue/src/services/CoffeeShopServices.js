@@ -6,6 +6,5 @@ export default {
     },
     getSingleCoffeeShop(id){
         return axios.get('/coffee-shops/'+ id)
-
     }
 }
