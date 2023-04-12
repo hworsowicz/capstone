@@ -104,10 +104,11 @@ INSERT INTO user_favorites (user_id, shop_id) VALUES
 
 
 	SELECT c.shop_name, c.shop_id,
-		   (CASE WHEN EXISTS(SELECT 1 FROM user_favorites uf WHERE uf.shop_id = c.shop_id AND uf.user_id = 1)
+		   (CASE WHEN EXISTS(SELECT 1 FROM user_favorites uf WHERE uf.shop_id = c.shop_id AND uf.user_id = 3)
 					THEN 1
 					ELSE 0 END) AS IsFavorite
 	FROM coffee_shops c
 
+	select
 
 	select * from coffee_shops
