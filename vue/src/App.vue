@@ -10,7 +10,7 @@
         <ul>
           <li>
             <router-link class="nav-item" v-bind:to="{ name: 'home' }">
-              <i class="fas fa-home"></i>
+              
               <!-- This is a font awesome icon -->
               Home<span></span>
             </router-link>
@@ -72,19 +72,14 @@ export default {};
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     
 }
-.view{
-  margin-top: 125px;
-  background-image: url('Images/hands.jpg');
-  background-size: cover;
-  height: 110vh;
-  
-  }
+
 #app{
     min-height: 100vh;
     overflow-x: hidden;
+    
 }
 
 header {
@@ -100,26 +95,30 @@ header {
   transition: 0.6s;
   
   
+  
 }
 header nav ul {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 header nav ul li {
   position: relative;
   list-style: none;
+  
 }
 .nav-item {
   position: relative;
  font-size: 1.0em;
-    color: red;
+    color: white;
     font-weight: 600;
     text-decoration: none;
     margin-left: 20px;
     padding: 6px 15px;
     transition: .5s;
+    
 }
 
 .nav-item:hover{
@@ -135,6 +134,7 @@ header nav ul li {
   margin-left: 20px;
   padding: 6px 15px;
   transition: 0.5s;
+  
 }
 
 .nav router-link:hover,
