@@ -4,6 +4,6 @@
     {
         public int UserId { get; set; }
         public int ShopId { get; set; }
-        public string ShopName { get; set; }
+   
     }
 }

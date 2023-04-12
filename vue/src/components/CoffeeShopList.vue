@@ -11,6 +11,7 @@
 <script>
 import CoffeeShopServices from "../services/CoffeeShopServices";
 import CoffeeShopCard from "../components/CoffeeShopCard.vue";
+import UserServices from "../services/UserServices.js"
 //import CoffeeShopDetails from "../views/CoffeeShopDetails.vue";
 
 export default {
@@ -27,7 +28,14 @@ export default {
             this.$store.commit("SET_COFFEE_SHOPS", response.data);
         })
         .catch(err => console.error("Sorry could not load shops", err))
-            }
+            },
+        getUserFavorites(){
+            UserServices.getUserFavorites()
+            .then((response)=> {
+                this.$store.commit("SET_USER_FAVORITES_STATUS", response.data)
+            })
+            .catch(err =>console.error("Sorry could not load favorites", err))
+        }
     },
          computed: {
         coffeeShops() {

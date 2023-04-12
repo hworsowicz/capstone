@@ -24,7 +24,7 @@ namespace Capstone.DAO
         {
             List<UserFavorites> result = new List<UserFavorites>();
 
-            const string sql = "SELECT c.shop_name, c.shop_id,\r\n\t\t   (CASE WHEN EXISTS(SELECT 1 FROM user_favorites uf WHERE uf.shop_id = c.shop_id AND uf.user_id = 1)\r\n\t\t\t\t\tTHEN 1\r\n\t\t\t\t\tELSE 0 END) AS IsFavorite\r\n\tFROM coffee_shops c";
+            const string sql = "SELECT c.shop_id,\r\n\t\t   (CASE WHEN EXISTS(SELECT 1 FROM user_favorites uf WHERE uf.shop_id = c.shop_id AND uf.user_id = 1)\r\n\t\t\t\t\tTHEN 1\r\n\t\t\t\t\tELSE 0 END) AS IsFavorite\r\n\tFROM coffee_shops c";
 
 
             using (SqlConnection conn = new SqlConnection(connectionString))
@@ -38,7 +38,6 @@ namespace Capstone.DAO
                 {
                     UserFavorites currentFavorites = new UserFavorites();
                     currentFavorites.ShopId = Convert.ToInt32(reader["shop_id"]);
-                    currentFavorites.ShopName = Convert.ToString(reader["shop_name"]);
                     currentFavorites.UserId = Convert.ToInt32(reader["user_id"]);
 
                     result.Add(currentFavorites);

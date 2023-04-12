@@ -12,5 +12,7 @@ namespace Capstone.DAO
 
         CoffeeShop GetCoffeeShopById(int shopId);
         List<CoffeeShop> GetUserFavorites(int userId);
+
+        void AddToFavorites(int userId, int shopId);
     }
 }

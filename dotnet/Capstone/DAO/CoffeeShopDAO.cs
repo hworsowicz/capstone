@@ -90,6 +90,31 @@ namespace Capstone.DAO
             return result;
         }
 
+        public void AddToFavorites (int userId, int shopId)
+        {
+            
+            const string sql = "INSERT INTO user_favorites (user_id, shop_id) VALUES (@userId, @shopId)";
+            try 
+            { 
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@shopId", shopId);
+                
+
+                cmd.ExecuteNonQuery();
+            } 
+            }
+            catch(SqlException ex)
+            {
+                Console.WriteLine("Coffee shop already exists in favorites", ex.Message );
+
+            }
+        }
+
 
         /// <summary>
         /// Method to get a singular coffee shop by the sql statement, can only be used within another method providing a reader
