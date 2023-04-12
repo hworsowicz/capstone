@@ -14,6 +14,14 @@
         public string PriceRange { get; set; }
         public string Website { get; set; }
         public bool IsFavorite { get; set; }
+        public string AddressLink { get; set; }
+        public string HeaderPicture { get; set; }
+        public string MapPicture { get; set; }
+        public string Menu { get; set; }
+        public string Gallery1 { get; set; }
+        public string Gallery2 { get; set; }
+        public string Gallery3 { get; set; }
+        public string Gallery4 { get; set; }
 
      
     }
