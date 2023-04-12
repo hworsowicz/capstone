@@ -43,9 +43,6 @@ export default {
           this.coffeeShop = response.data;
       })
       .catch (error => console.error('Could not load Coffee Shop', error))
-  },
-  methods: {
-
   }
 }
 </script>
