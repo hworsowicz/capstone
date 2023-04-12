@@ -4,7 +4,7 @@
 <template>
   <div id="app">
     <header>
-      <a class="logo">Logo</a>
+      <a class="logo"></a>
       <!-- If you start to get random styling you don't like, remove container from this div -->
       <nav id="nav">
         <ul>
@@ -155,4 +155,5 @@ header nav ul li {
   opacity: 0;
   transition: 0.5s;
 }
+
 </style>
