@@ -109,6 +109,3 @@ INSERT INTO user_favorites (user_id, shop_id) VALUES
 					ELSE 0 END) AS IsFavorite
 	FROM coffee_shops c
 
-	select
-
-	select * from coffee_shops
