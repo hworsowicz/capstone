@@ -4,6 +4,9 @@
     <router-link :to="{name: 'home'}"> </router-link>
     <coffee-shop-card  v-bind:coffeeShop="c" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId"/>
    <!-- <coffee-shop-details v-bind:coffeeShop="c" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId"/>-->
+   <div>
+       <img class="map" src="../Images/Columbus-Map.jpg" alt="Columbus Map">
+   </div>
 </div>
 
 </template>
@@ -55,8 +58,12 @@ div .coffee-shop-list {
     display: grid;
     grid-template-areas: "card card map";
     grid-template-columns: 1fr 1fr 2fr;
+    grid-area: card;
 }
 
+.map{
+    grid-area: map;
+}
 
 
 </style>
