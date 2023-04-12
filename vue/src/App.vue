@@ -77,7 +77,7 @@ export default {};
 }
 .view{
   margin-top: 125px;
-  background-image: url('Images/Background1.jpg');
+  background-image: url('Images/hands.jpg');
   background-size: cover;
   height: 110vh;
   
