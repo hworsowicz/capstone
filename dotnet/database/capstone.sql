@@ -42,7 +42,7 @@ CREATE TABLE coffee_shops (
 	hours_weekends nvarchar (150),
 	price_range nvarchar (5), 
 	website nvarchar (150),
-	address_link nvarchar (500),
+	address_link nvarchar (Max),
 	header_picture_path nvarchar(300) NOT NULL,
 	map_picture nvarchar (300) NOT NULL,
 	menu_picture nvarchar (300) NOT NULL,

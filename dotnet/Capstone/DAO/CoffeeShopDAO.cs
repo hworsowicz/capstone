@@ -37,7 +37,7 @@ namespace Capstone.DAO
         }
         public CoffeeShop GetCoffeeShopById(int shopId)
         {
-            const string sql = "SELECT shop_id, shop_name, shop_location, shop_has_spirits, image_path, about_shop, hours_weekdays, hours_weekends, price_range, website  FROM coffee_shops WHERE shop_id = @shopId";
+            const string sql = "SELECT shop_id, shop_name, shop_location, shop_has_spirits, image_path, about_shop, hours_weekdays, hours_weekends, price_range, website, address_link, header_picture_path, map_picture, menu_picture, gallery_1, gallery_2, gallery_3, gallery_4  FROM coffee_shops WHERE shop_id = @shopId";
             using(SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();

@@ -23,33 +23,33 @@
           </div>
         </div>
         <div class="features-img">
-          <img src="../Images/staufsMap.jpg" alt="map for coffeeshop" />
+          <img :src="require('../Images/' + coffeeShop.mapPicture)" />
         </div>
       </div>
 
     </section>
     <section id="photos">
       <div>
-        <p>Take a Look</p>
+        
         <h1>{{coffeeShop.shopName}}</h1>
       </div>
       <div class="photo-box">
             <div class="single-photo">
-              <img src="../Images/staufsgvbuilding.jpg" alt="Staufs gv building">
+               <img :src="require('../Images/' + coffeeShop.gallery1)" />
             </div>
             <div class="single-photo">
-              <img src="../Images/staufsmatcha.jpg" alt="staufs matcha">
+             <img :src="require('../Images/' + coffeeShop.gallery3)" />
             </div>
             <div class="single-photo">
-              <img src="../Images/staufscoffee.jpg" alt="staufs coffee">
+              <img :src="require('../Images/' + coffeeShop.gallery2)" />
             </div>
             <div class="single-photo">
-              <img src="../Images/staufslogo.jpg" alt="logo">
+             <img :src="require('../Images/' + coffeeShop.gallery4)" />
             </div>
       </div>
 
     </section>
-   <!-- <img class="menu" src="../Images/staufs menu.jpg" alt="stauf's menu" />-->
+     <img :src="require('../Images/' + coffeeShop.menu)" />
     
     
 
@@ -82,7 +82,7 @@ export default {
 <style>
 #banner {
   background: linear-gradient(rgba(0, 0, 0, 0.5), #fff5),
-    url(../Images/staufsgermanvillage.jpg);
+    url(../Images/cafe.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -90,7 +90,7 @@ export default {
 .banner-text {
   text-align: center;
   color: #fff;
-  padding-top: 180px;
+  padding-top: 250px;
   font-size: 110px;
 }
 .title-text {
@@ -122,10 +122,10 @@ export default {
   margin: auto;
 }
 .features-img img{
-  width: 70%;
+  width: 90%;
   border-radius: 10px;
 }
-.features h1 {
+.features h1{
   text-align: left;
   margin-bottom: 10px;
   font-weight: 100;
@@ -139,6 +139,7 @@ export default {
 .features-text p{
   padding: 0 20px;
   text-align: initial;
+  font-size: 30px;
 }
 @media screen and (max-width: 770px) {
   .title-text h1{
