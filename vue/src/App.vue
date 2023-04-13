@@ -105,11 +105,13 @@ header nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
+ 
   
 }
 header nav ul li {
   position: relative;
   list-style: none;
+  
   
 }
 .nav-item {
@@ -131,7 +133,7 @@ header nav ul li {
 .nav li {
   position: relative;
   font-size: 1em;
-  color: #fff;
+  color: #8fc1d4;
   font-weight: 600;
   text-decoration: none;
   margin-left: 20px;

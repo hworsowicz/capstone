@@ -1,12 +1,14 @@
 <template>
 <body>
+  <div class="container">
+    <div class="wrapper">
   <div id="register" class="text-center">
     <form class="form-register" @submit.prevent="register">
-      <h1 class="h3 mb-3 font-weight-normal">Create Account</h1>
+      <h1 class="title">Create Account</h1>
       <div class="alert alert-danger" role="alert" v-if="registrationErrors">
         {{ registrationErrorMsg }}
       </div>
-      <div class="form-group">
+      <div class="row">
         <input
           type="text"
           id="username"
@@ -16,7 +18,7 @@
           required
           autofocus />
       </div>
-      <div class="form-group">
+      <div class="row">
         <input
           type="password"
           id="password"
@@ -25,7 +27,7 @@
           v-model="user.password"
           required />
       </div>
-      <div class="form-group">
+      <div class="row">
         <input
           type="password"
           id="confirmPassword"
@@ -34,14 +36,16 @@
           v-model="user.confirmPassword"
           required />
       </div>
-      <div class="form-group">
+      <div class="row">
         <router-link :to="{ name: 'login' }">Have an account?</router-link>
       </div>
-      <button class="btn btn-primary" type="submit">
+      <button class="create-link" type="submit">
         Create Account
       </button>
     </form>
   </div>
+    </div>
+    </div>
     </body>
 </template>
 
@@ -198,7 +202,7 @@ form .row input::placeholder{
 form .button input:hover{
   background: #12876F;
 }
-.wrapper form .signup-link{
+.wrapper form .create-link{
  border: 0;
  outline: 0;
                     cursor: pointer;
@@ -213,11 +217,11 @@ form .button input:hover{
                     min-height: 28px;
                     transition: background-color .24s,box-shadow .24s;
 }
-.wrapper form .signup-link a{
+.wrapper form .create-link a{
   color: #457b9d;
   text-decoration: none;
 }
-form .signup-link a:hover{
+form .create-link a:hover{
   text-decoration: underline;
 }
 </style>
