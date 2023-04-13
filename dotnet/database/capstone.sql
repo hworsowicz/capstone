@@ -117,3 +117,7 @@ INSERT INTO user_favorites (user_id, shop_id) VALUES
 					ELSE 0 END) AS IsFavorite
 	FROM coffee_shops c
 
+	SELECT * FROM user_favorites WHERE user_id = 3
+
+
+	DELETE FROM user_favorites WHERE user_id = @user_id AND shop_id = @shop_id
