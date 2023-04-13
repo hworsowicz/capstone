@@ -2,8 +2,10 @@
   <section class="page">
       <h2></h2>
       <router-link :to="{ name: 'home' }"> </router-link>
-      <div class="card">
-      <coffee-shop-card v-bind:coffeeShop="c" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId"/> 
+      <div class="cards">
+        <div class="flex-card" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId">
+      <coffee-shop-card v-bind:coffeeShop="c" /> 
+        </div>
       </div>
       <!-- <coffee-shop-details v-bind:coffeeShop="c" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId"/>-->
       <!--<div class="map">
@@ -54,13 +56,14 @@ export default {
 </script>
 
 <style>
-.card {
-    
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    row-gap: 1rem;
+    column-gap: 1rem;
 }
-.page{
-  float: left;
-  width: 25%;
-  padding: 0 10px;
-}
+
+
+
 
 </style>
