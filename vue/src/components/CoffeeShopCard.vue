@@ -69,7 +69,7 @@ export default {
 </script>
 
 <style>
-
+/* Beginning of card*/
 .card {
   display: grid;
   grid-template-columns: 300px;
@@ -80,6 +80,9 @@ export default {
   background: #fcdec0;
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
   text-align: center;
+
+  max-width: 70%;
+  
 
   transition: .5s ease;
   cursor: pointer;
@@ -163,12 +166,10 @@ export default {
 .mark-fav{
   background: none;
   border: none;
-  transition: ease-in;
-  transform: scaleZ(1.5);
+  
 }
 .mark-Notfav{
   background: none;
   border: none;
-  transform: scaleZ(1.5);
 }
 </style>
