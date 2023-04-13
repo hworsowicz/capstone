@@ -96,6 +96,7 @@ export default {
 
   transition: .5s ease;
   cursor: pointer;
+
 }
 
 .card .pic {

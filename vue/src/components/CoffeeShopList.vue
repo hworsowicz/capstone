@@ -58,6 +58,7 @@ export default {
 
 <style>
 .page {
+  display: grid;
   grid-template-areas: "card card map";
   grid-template-columns: 1fr 1fr 2fr;
 }
