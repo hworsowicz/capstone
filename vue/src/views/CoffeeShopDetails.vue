@@ -30,8 +30,8 @@
     </section>
     <section id="photos">
       <div>
-        
-        <h1>{{coffeeShop.shopName}}</h1>
+        <h1></h1>
+        <br>
       </div>
       <div class="photo-box">
             <div class="single-photo">
@@ -49,7 +49,10 @@
       </div>
 
     </section>
+    <div class="features-menu">
+         
      <img :src="require('../Images/' + coffeeShop.menu)" />
+        </div>
     
     
 
@@ -80,6 +83,7 @@ export default {
 </script>
 
 <style>
+
 #banner {
   background: linear-gradient(rgba(0, 0, 0, 0.5), #fff5),
     url(../Images/cafe.jpg);
@@ -90,8 +94,12 @@ export default {
 .banner-text {
   text-align: center;
   color: #fff;
-  padding-top: 250px;
+  padding-top: 500px;
   font-size: 110px;
+}
+#feature{
+  width: 100%;
+  padding: 70px 0;
 }
 .title-text {
   text-align: center;
@@ -99,6 +107,7 @@ export default {
 }
 .title-text h1 {
   font-size: 50px;
+  color: #000;
 }
 .title-text p {
   margin: auto;
@@ -117,6 +126,9 @@ export default {
   align-items: center;
   text-align: left;
 }
+/*.features{
+  flex-basis: 50%;
+}*/
 .features-img {
   flex-basis: 50%;
   margin: auto;
@@ -136,10 +148,22 @@ export default {
   align-items: center;
   margin-bottom: 40px;
 }
-.features-text p{
+.feature-text p{
   padding: 0 20px;
   text-align: initial;
   font-size: 30px;
+  color: #000;
+}
+.features-menu{
+    width: 90%;
+  border-radius: 10px;
+  align-items: center;
+}
+.features-menu img{
+  width: 90%;
+  border-radius: 10px;
+  align-items: center;
+  padding-left: 20%;
 }
 @media screen and (max-width: 770px) {
   .title-text h1{
@@ -158,18 +182,28 @@ export default {
     flex-basis: 100%;
     margin-bottom: 30px;
   }
+  .features-map {
+  flex-basis: 100%;
+  } 
+  .features-map img{
+    width: 100%
+  }
+
 }
 #photos{
   width: 100%;
   padding: 70px 0;
 
 }
+
+
 .photo-box{
   width: 80%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   margin:auto;
+  
 }
 .single-photo{
   flex-basis: 48%;
