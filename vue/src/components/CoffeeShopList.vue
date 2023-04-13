@@ -40,6 +40,7 @@ export default {
         })
         .catch((err) => console.error("Sorry could not load favorites", err));
     },
+    
   },
   computed: {
     coffeeShops() {
