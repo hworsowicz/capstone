@@ -1,10 +1,9 @@
 <template>
   <section class="page">
-      <h2></h2>
       <router-link :to="{ name: 'home' }"> </router-link>
       <div class="cards">
-        <div class="flex-card" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId">
-      <coffee-shop-card v-bind:coffeeShop="c" /> 
+        <div class="flex-card" v-for="c in favoriteShops" v-bind:key="c.coffeeShopId">
+      <coffee-shop-card v-bind:coffeeShop="c" v-if="c.isFavorite"/> 
         </div>
       </div>
       <!-- <coffee-shop-details v-bind:coffeeShop="c" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId"/>-->
@@ -44,10 +43,13 @@ export default {
     },
     
   },
+ 
   computed: {
-    coffeeShops() {
-      return this.$store.state.coffeeShops;
-    },
+    favoriteShops() {
+        return this.$store.state.coffeeShops.filter (c => {
+            return c.isFavorite === true;
+        })
+    }
   },
   created() {
     this.getCoffeeShops();
@@ -59,30 +61,6 @@ export default {
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    row-gap: 5rem;
+    row-gap: 1rem;
     column-gap: 1rem;
 }
-/*.page{
-  margin-top: 100px;
-  background: url("../Images/splash.jpg");
-  width: 100%;
-  height: 100%;
-  border: 5px solid none;
-  box-sizing: border-box;
-  background-size: contain;
-}
-*/
-
-body{
-  margin-top: 100px;
-  background: url("../Images/splash.jpg");
-  width: 100%;
-  height: 100%;
-  border: 5px solid none;
-  box-sizing: border-box;
-  background-size: contain;
-}
-
-
-
-</style>
