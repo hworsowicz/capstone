@@ -3,14 +3,15 @@
     <div class="coffee-shop-list">
       <h2>Coffee Shops</h2>
       <router-link :to="{ name: 'home' }"> </router-link>
+      <div class="card">
       <coffee-shop-card
         v-bind:coffeeShop="c"
         v-for="c in this.$store.state.coffeeShops"
         v-bind:key="c.coffeeShopId"
-      />
+      /> </div>
       <!-- <coffee-shop-details v-bind:coffeeShop="c" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId"/>-->
-      <div>
-        <img class="map" src="../Images/Columbus-Map.jpg" alt="Columbus Map" />
+      <div class="map">
+        <img  src="../Images/Columbus-Map.jpg" alt="Columbus Map" />
       </div>
     </div>
   </section>
@@ -57,17 +58,17 @@ export default {
 </script>
 
 <style>
-.page {
-  grid-template-areas: "card card map";
-  grid-template-columns: 1fr 1fr 2fr;
-}
-div .coffee-shop-list {
-  font-family: "Quicksand", sans-serif;
-  background-color: #fcdec0;
-  grid-area: card;
-}
+.page{
+ 
 
-.map {
-  grid-area: map;
+}
+.map{
+  
+ 
+}
+.card{
+  flex-direction: column;
+
+  
 }
 </style>
