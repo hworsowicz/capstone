@@ -46,6 +46,12 @@
               >&nbsp;&nbsp;Coffee Shops<span></span>
             </router-link>
           </li>
+          <li>
+             <router-link class="nav-item" v-bind:to="{ name: 'favorites' }">
+              
+              <!-- This is a font awesome icon -->
+              My Favorites<span></span> </router-link>
+          </li>
         </ul>
       </nav>
     </header>
