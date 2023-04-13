@@ -90,12 +90,14 @@ export default {
   background-size: cover;
   background-position: center;
   height: 100vh;
+
 }
 .banner-text {
   text-align: center;
   color: #fff;
   padding-top: 250px;
   font-size: 110px;
+  
 }
 #feature{
   width: 100%;
