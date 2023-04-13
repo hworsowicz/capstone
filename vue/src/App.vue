@@ -93,6 +93,9 @@ header {
   align-items: center;
   z-index: 1000;
   transition: 0.6s;
+  background-color: #FCDEC0;
+  border-radius: 4px;
+  box-shadow: 5px 5px 5px rgb(129, 127, 127) ;
   
   
   
@@ -112,7 +115,7 @@ header nav ul li {
 .nav-item {
   position: relative;
  font-size: 1.0em;
-    color: white;
+    color: black;
     font-weight: 600;
     text-decoration: none;
     margin-left: 20px;

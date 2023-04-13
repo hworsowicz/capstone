@@ -3,7 +3,16 @@
   <div class="img">
     <img class="pic" :src="require('../Images/' + coffeeShop.imagePath)" alt="Coffee shop image"/>
   
-  <button 
+  
+  </div>
+
+  <div class="text">
+    <p class="h3"> {{coffeeShop.shopName}} </p>
+    <p class="p"> {{coffeeShop.shopLocation}}</p>
+      <router-link class="name" v-bind:to="{ name: 'details', params: { coffeeShopId: coffeeShop.shopId },}">
+         
+      <p class="span">Tell Me More</p>
+       <button 
           class="save"
           v-on:click.prevent="addToUserFavorites()"
           v-if="!coffeeShop.isFavorite"
@@ -17,13 +26,6 @@
         >
           <i class="fas fa-heart" style="color: #F54747"></i>
         </button>
-  </div>
-
-  <div class="text">
-    <p class="h3"> {{coffeeShop.shopName}} </p>
-    <p class="p"> {{coffeeShop.shopLocation}}</p>
-      <router-link class="name" v-bind:to="{ name: 'details', params: { coffeeShopId: coffeeShop.shopId },}">
-      <p class="span">Tell Me More</p>
       </router-link>
   </div>
     </div>
@@ -90,18 +92,20 @@ export default {
 <style>
 /* Beginning of card*/
 .card {
-  width: 252px;
-  height: 265px;
+  width: 210px;
+  height: 425px;
   background: white;
   border-radius: 30px;
-  box-shadow: 15px 15px 30px #d3b59a,
-             -15px -15px 30px #d3b59a;
+  text-align: center;
+
+  box-shadow: 7px 7px 15px rgb(102, 102, 102) ;
   transition: 0.2s ease-in-out;
 }
-.img img{
-  background-size: cover;
-  background-repeat:  no-repeat;
-  background-position: center, center;
+.card .pic{
+ width: 100%;
+ max-height: 100%;
+ object-fit: cover;
+ border-radius: 30px 30px 0 0;
   
 }
 .img {
@@ -109,26 +113,21 @@ export default {
   height: 50%;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
-  display: flex;
- 
-  background: linear-gradient(rgba(0, 0, 0, 0.5), #fff5),
-    url(../Images/back1.png);
-  align-items: top;
-  justify-content: right;
- 
+  background: linear-gradient(rgba(0, 0, 0, 0.5), #fff5);
+  
 }
 
 .save {
   transition: 0.2s ease-in-out;
   border-radius: 10px;
-  margin: 20px;
+  margin: 3px;
   width: 30px;
   height: 30px;
-  background-color: #ffffff;
+  background: none;
+  border: none;
   
-  display: flex;
-  align-items: center;
-  justify-content: center;
+ 
+
 }
 
 .text {
@@ -156,20 +155,21 @@ export default {
 }
 
 .icon-box svg {
-  width: 17px;
+  width: 50px;
 }
 
 .text .h3 {
   font-family: 'Lucida Sans' sans-serif;
   font-size: 15px;
   font-weight: 600;
-  color: black;
+  
 }
 
 .text .p {
   font-family: 'Lucida Sans' sans-serif;
   color: #999999;
   font-size: 13px;
+  border: black;
 }
 
 .icon-box .span {
@@ -180,9 +180,14 @@ export default {
   color: #865439;
 }
 
+
 .card:hover {
   cursor: pointer;
   box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+  
+  transform: scale(1.1);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+
 }
 
 .save:hover {
