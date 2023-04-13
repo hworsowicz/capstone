@@ -71,8 +71,8 @@ export default {
   height: 265px;
   background: white;
   border-radius: 30px;
-  box-shadow: 15px 15px 30px #c68b59,
-             -15px -15px 30px #c68b59;
+  box-shadow: 15px 15px 30px #d3b59a,
+             -15px -15px 30px #d3b59a;
   transition: 0.2s ease-in-out;
 }
 .img img{
@@ -80,12 +80,6 @@ export default {
   background-repeat:  no-repeat;
   background-position: center, center;
   
-<<<<<<< HEAD
-=======
-
-  transition: .5s ease;
-  cursor: pointer;
->>>>>>> e0e9d739684a1efad339563c18f94082f6042bc3
 }
 .img {
   width: 100%;

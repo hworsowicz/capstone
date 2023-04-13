@@ -1,19 +1,14 @@
 <template>
   <section class="page">
-    <div class="coffee-shop-list">
-      <h2>Coffee Shops</h2>
+      <h2></h2>
       <router-link :to="{ name: 'home' }"> </router-link>
       <div class="card">
-      <coffee-shop-card
-        v-bind:coffeeShop="c"
-        v-for="c in this.$store.state.coffeeShops"
-        v-bind:key="c.coffeeShopId"
-      /> </div>
-      <!-- <coffee-shop-details v-bind:coffeeShop="c" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId"/>-->
-      <div class="map">
-        <img  src="../Images/Columbus-Map.jpg" alt="Columbus Map" />
+      <coffee-shop-card v-bind:coffeeShop="c" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId"/> 
       </div>
-    </div>
+      <!-- <coffee-shop-details v-bind:coffeeShop="c" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId"/>-->
+      <!--<div class="map">
+        <img  src="../Images/Columbus-Map.jpg" alt="Columbus Map" />
+      </div>-->
   </section>
 </template>
 
@@ -58,21 +53,13 @@ export default {
 </script>
 
 <style>
-
+.card {
+    
+}
 .page{
-<<<<<<< HEAD
- 
-=======
-
-
->>>>>>> e0e9d739684a1efad339563c18f94082f6042bc3
+  float: left;
+  width: 25%;
+  padding: 0 10px;
 }
-.map{
-  
- 
-}
-.card{
-  flex-direction: column;
 
-}
 </style>
