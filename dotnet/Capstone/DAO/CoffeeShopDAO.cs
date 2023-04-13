@@ -5,7 +5,7 @@ using System.Data.SqlClient;
 
 namespace Capstone.DAO
 {
-    public class CoffeeShopDAO : ICoffeeShopDAO 
+    public class CoffeeShopDAO : ICoffeeShopDAO
     {
         private readonly string connectionString;
         public CoffeeShopDAO(string connectionString)
@@ -21,12 +21,12 @@ namespace Capstone.DAO
             List<CoffeeShop> result = new List<CoffeeShop>();
 
             const string sql = "SELECT shop_id, shop_name, shop_location, shop_has_spirits, image_path, about_shop, hours_weekdays, hours_weekends, price_range, website, address_link, header_picture_path, map_picture, menu_picture, gallery_1, gallery_2, gallery_3, gallery_4, 0 AS IsFavorite FROM coffee_shops";
-            using(SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
                 SqlDataReader reader = cmd.ExecuteReader();
-                while(reader.Read())
+                while (reader.Read())
                 {
                     CoffeeShop coffeeShop = GetCoffeeShopFromDataReader(reader);
 
@@ -38,7 +38,7 @@ namespace Capstone.DAO
         public CoffeeShop GetCoffeeShopById(int shopId)
         {
             const string sql = "SELECT shop_id, shop_name, shop_location, shop_has_spirits, image_path, about_shop, hours_weekdays, hours_weekends, price_range, website, address_link, header_picture_path, map_picture, menu_picture, gallery_1, gallery_2, gallery_3, gallery_4, 0 AS IsFavorite FROM coffee_shops WHERE shop_id = @shopId";
-            using(SqlConnection conn = new SqlConnection(connectionString))
+            using (SqlConnection conn = new SqlConnection(connectionString))
             {
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(sql, conn);
@@ -46,17 +46,17 @@ namespace Capstone.DAO
                 cmd.Parameters.AddWithValue("@shopId", shopId);
 
                 SqlDataReader reader = cmd.ExecuteReader();
-                if(reader.Read())
+                if (reader.Read())
                 {
                     CoffeeShop coffeeShop = GetCoffeeShopFromDataReader(reader);
                     return coffeeShop;
-                    
+
                 }
                 else
                 {
                     return null;
                 }
-                
+
 
             }
         }
@@ -78,7 +78,7 @@ namespace Capstone.DAO
                 while (reader.Read())
                 {
                     CoffeeShop coffeeShop = GetCoffeeShopFromDataReader(reader);
-                 
+
 
 
                     result.Add(coffeeShop);
@@ -88,27 +88,50 @@ namespace Capstone.DAO
             return result;
         }
 
-        public void AddToFavorites (int userId, int shopId)
+        public void AddToFavorites(int userId, int shopId)
         {
-            
+
             const string sql = "INSERT INTO user_favorites (user_id, shop_id) VALUES (@userId, @shopId)";
-            try 
-            { 
-            using (SqlConnection conn = new SqlConnection(connectionString))
+            try
             {
-                conn.Open();
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
 
-                SqlCommand cmd = new SqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@userId", userId);
-                cmd.Parameters.AddWithValue("@shopId", shopId);
-                
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    cmd.Parameters.AddWithValue("@shopId", shopId);
 
-                cmd.ExecuteNonQuery();
-            } 
+
+                    cmd.ExecuteNonQuery();
+                }
             }
-            catch(SqlException ex)
+            catch (SqlException ex)
             {
-                Console.WriteLine("Coffee shop already exists in favorites", ex.Message );
+                Console.WriteLine("Coffee shop already exists in favorites", ex.Message);
+
+            }
+        }
+
+        public void RemoveFromFavorites(int userId, int shopId)
+        {
+            const string sql = "DELETE FROM user_favorites WHERE user_id = @userId AND shop_id = @shopId";
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@userId", userId);
+                    cmd.Parameters.AddWithValue("@shopId", shopId);
+
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (SqlException ex)
+            {
+                Console.WriteLine("Coffee shop is not a favorite", ex.Message);
 
             }
         }

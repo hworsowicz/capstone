@@ -12,7 +12,7 @@
         </button>
         <button
           class="save"
-          v-on:click.prevent="setFavorite(false)"
+          v-on:click.prevent="removeUserFav()"
           v-if="coffeeShop.isFavorite"
         >
           <i class="fas fa-heart" style="color: #F54747"></i>
@@ -58,6 +58,17 @@ export default {
            this.setFavorite(true);
         }
        })
+    },
+
+    // Removes a favorite from logged in users favorites while also changing the heart icons color from red to empty(white)
+    removeUserFav() {
+      const shop = {shopId: this.coffeeShop.shopId}
+      UserServices.removeFromUserFavorites(shop)
+      .then(response => {
+        if (response.status == 200){
+          this.setFavorite(false); // Set heart to not red
+        }
+      })
     },
 
     created() {
