@@ -1,6 +1,5 @@
 <template>
   <section class="page">
-      <h2>HI</h2>
       <router-link :to="{ name: 'home' }"> </router-link>
       <div class="cards">
         <div class="flex-card" v-for="c in favoriteShops" v-bind:key="c.coffeeShopId">

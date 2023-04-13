@@ -62,7 +62,7 @@ export default {
     row-gap: 5rem;
     column-gap: 1rem;
 }
-.page{
+/*.page{
   margin-top: 100px;
   background: url("../Images/splash.jpg");
   width: 100%;
@@ -71,9 +71,17 @@ export default {
   box-sizing: border-box;
   background-size: contain;
 }
+*/
 
-
-
+body{
+  margin-top: 100px;
+  background: url("../Images/splash.jpg");
+  width: 100%;
+  height: 100%;
+  border: 5px solid none;
+  box-sizing: border-box;
+  background-size: contain;
+}
 
 
 

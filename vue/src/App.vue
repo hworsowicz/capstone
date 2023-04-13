@@ -2,8 +2,8 @@
      Note that you have classes from bootstrap available to you.
      See https://getbootstrap.com/docs/4.5/getting-started/introduction/ for reference on bootstrap -->
 <template>
-  <div id="app">
-    <header>
+  <div id="app" v-on:scroll="changeScrollEffect">
+    <header v-bind:class="scrollEffect ? 'header' : 'headerWithColor'">
       <a class="logo"></a>
       <!-- If you start to get random styling you don't like, remove container from this div -->
       <nav id="nav">
@@ -62,7 +62,19 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data(){
+    return{
+      scrollEffect: false
+    }
+  },
+  methods:{
+    changeScrollEffect(){
+      console.log("here")
+      this.scrollEffect = true;
+    }
+  }
+};
 </script>
 
 <!-- Application-Wide Styles go here. 
@@ -99,13 +111,24 @@ header {
   align-items: center;
   z-index: 1000;
   transition: 0.6s;
-  background-color: #FCDEC0;
+  
   border-radius: 4px;
   box-shadow: 5px 5px 5px rgb(129, 127, 127) ;
-  
-  
-  
 }
+headerWithColor{
+ position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: 0.6s;
+  background-color: brown;
+}
+
 header nav ul {
   position: relative;
   display: flex;
