@@ -103,6 +103,7 @@ export default {
   width: 100%;
   padding: 70px 0;
 }
+
 .title-text {
   text-align: center;
   padding-bottom: 70px;
