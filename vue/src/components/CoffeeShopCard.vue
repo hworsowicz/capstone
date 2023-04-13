@@ -80,13 +80,6 @@ export default {
   background-repeat:  no-repeat;
   background-position: center, center;
   
-<<<<<<< HEAD
-
-  transition: .5s ease;
-  cursor: pointer;
-
-=======
->>>>>>> 92cbe6fefff62fd932c78aa198fcc69f13830b3c
 }
 .img {
   width: 100%;
