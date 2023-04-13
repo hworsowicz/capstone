@@ -94,7 +94,7 @@ export default {
 .banner-text {
   text-align: center;
   color: #fff;
-  padding-top: 500px;
+  padding-top: 250px;
   font-size: 110px;
 }
 #feature{
