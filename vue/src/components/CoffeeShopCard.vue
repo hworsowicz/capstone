@@ -1,47 +1,33 @@
 <template>
-  <div class="body">
-    <div class="card">
-      <img
-        class="pic"
-        :src="require('../Images/' + coffeeShop.imagePath)"
-        alt="Coffee shop image"
-      />
-      <div class="card-text">
-        <router-link class="name" v-bind:to="{ name: 'details', params: { coffeeShopId: coffeeShop.shopId },}">
-          <h2 class="shop-name">{{ coffeeShop.shopName }}</h2>
-        </router-link>
-        <p class="location">{{ coffeeShop.shopLocation }}</p>
-      </div>
-      <div class="card-stats">
-        <div class="stat">
-          <div class="value">19</div>
-          <div class="type">Likes</div>
-        </div>
-
-         <div class="stat border">
-          <div class="value">$$$</div>
-          <div class="type">Price</div>
-        </div>
-
-        <div class="stat">
-        <button
-          class="mark-fav"
+ <div class="card">
+  <div class="img">
+    <img class="pic" :src="require('../Images/' + coffeeShop.imagePath)" alt="Coffee shop image"/>
+  
+  <button 
+          class="save"
           v-on:click.prevent="setFavorite(true)"
           v-if="!coffeeShop.isFavorite"
         >
           <i class="far fa-heart"></i>
         </button>
         <button
-          class="mark-Notfav"
+          class="save"
           v-on:click.prevent="setFavorite(false)"
           v-if="coffeeShop.isFavorite"
         >
-          <i class="fas fa-heart" style="color: #f54747"></i>
+          <i class="fas fa-heart" style="color: #F54747"></i>
         </button>
-        </div>
-      </div>
-    </div>
   </div>
+
+  <div class="text">
+    <p class="h3"> {{coffeeShop.shopName}} </p>
+    <p class="p"> {{coffeeShop.shopLocation}}</p>
+      <router-link class="name" v-bind:to="{ name: 'details', params: { coffeeShopId: coffeeShop.shopId },}">
+      <p class="span">Tell Me More</p>
+      </router-link>
+  </div>
+    </div>
+
 </template>
 
 <script>
@@ -81,106 +67,113 @@ export default {
 <style>
 /* Beginning of card*/
 .card {
-  display: grid;
-  grid-template-columns: 300px;
-  grid-template-rows: 210px 210px 80px;
-  grid-template-areas: "image" "text" "stats";
-  padding: 20px;
-  border-radius: 18px;
-  background: #fcdec0;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
-  text-align: center;
-
-  max-width: 70%;
+  width: 252px;
+  height: 265px;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 15px 15px 30px #c68b59,
+             -15px -15px 30px #c68b59;
+  transition: 0.2s ease-in-out;
+}
+.img img{
+  background-size: cover;
+  background-repeat:  no-repeat;
+  background-position: center, center;
   
+<<<<<<< HEAD
 
   transition: .5s ease;
   cursor: pointer;
 
+=======
+>>>>>>> 92cbe6fefff62fd932c78aa198fcc69f13830b3c
 }
-
-.card .pic {
-  grid-area: image;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  
+.img {
+  width: 100%;
+  height: 50%;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  display: flex;
  
-  width: auto;
-  max-height: 100%;
-  object-fit: cover;
-}
-.card-text {
-  grid-area: text;
-  margin: 25px;
-}
-.card-text h2 {
-  color: grey;
-  font-size: 15px;
-  font-weight: 300;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), #fff5),
+    url(../Images/back1.png);
+  align-items: top;
+  justify-content: right;
+ 
 }
 
-.card-stats {
-  grid-area: stats;
-  font-size: 28px;
-}
-.card-stats {
-  grid-area: stats;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  border-bottom-right-radius: 15px;
-  border-bottom-left-radius: 15px;
-  background: #8FC1D4;
-}
-
-.card-stats .stat{
+.save {
+  transition: 0.2s ease-in-out;
+  border-radius: 10px;
+  margin: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.text {
+  margin: 20px;
+  display: flex;
   flex-direction: column;
+  align-items: space-around;
+}
+
+.save .svg {
+  transition: 0.2s ease-in-out;
+  width: 15px;
+  height: 15px;
+}
+
+.icon-box {
+  margin-top: 15px;
+  width: 70%;
   padding: 10px;
-  color: white;
+  background-color: #e3fff9;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
 }
 
-.card-stats .type{
-  font-size: 11px;
-  font-weight: 300;
-  text-transform: uppercase;
-}
-.card-stats .border{
-  border-left: 1px solid #8FC1D4;
-  border-right: 1px solid #8FC1D4;
+.icon-box svg {
+  width: 17px;
 }
 
-.card-stats .value{
-   font-size: 22px;
-   font-weight: 500;
-}
-.card:hover{
-  transform: scale(1.2);
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+.text .h3 {
+  font-family: 'Lucida Sans' sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: black;
 }
 
-
-.card p.location {
-  font-size: 10px;
-  padding-left: 7px;
-}
-.card .name {
-  text-decoration: none;
-
-}
-.card .name:hover {
-  text-decoration: underline;
+.text .p {
+  font-family: 'Lucida Sans' sans-serif;
+  color: #999999;
+  font-size: 13px;
 }
 
-.mark-fav{
-  background: none;
-  border: none;
-  
+.icon-box .span {
+  margin-left: 10px;
+  font-family: 'Lucida Sans' sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #865439;
 }
-.mark-Notfav{
-  background: none;
-  border: none;
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.1);
+}
+
+.save:hover {
+  transform: scale(1.1) rotate(10deg);
+}
+
+.save:hover .svg {
+  fill: #ced8de;
 }
 </style>
