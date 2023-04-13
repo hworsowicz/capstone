@@ -47,9 +47,9 @@ namespace Capstone.Controllers
             int userId = int.Parse(User.FindFirst("sub").Value); //int parse is setting the userId to whoever is currently logged in 
             newFavorite.UserId = userId;
             
-            coffeeShopDAO.AddToFavorites(userId, newFavorite.ShopId);
+            coffeeShopDAO.RemoveFromFavorites(userId, newFavorite.ShopId);
 
-            return Ok(); 
+            return Ok("Good delete"); 
         }
         [HttpGet()]
         public ActionResult GetAllCoffeeShops()
