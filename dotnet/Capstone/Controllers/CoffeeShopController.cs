@@ -43,7 +43,17 @@ namespace Capstone.Controllers
         [HttpGet()]
         public ActionResult GetAllCoffeeShops()
         {
-            List<CoffeeShop> allShops = coffeeShopDAO.GetAllCoffeeShops();
+            List<CoffeeShop> allShops; 
+            
+            if(string.IsNullOrWhiteSpace( User.Identity.Name))
+            {
+
+              allShops =  coffeeShopDAO.GetAllCoffeeShops();
+            }
+            else
+            {
+                allShops = coffeeShopDAO.GetUserFavorites(int.Parse(User.FindFirst("sub").Value));
+            }
 
             return Ok(allShops);
         }

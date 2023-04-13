@@ -58,16 +58,10 @@ export default {
 </script>
 
 <style>
-<<<<<<< HEAD
-.page {
-  display: grid;
-  grid-template-areas: "card card map";
-  grid-template-columns: 1fr 1fr 2fr;
-=======
-.page{
- 
 
->>>>>>> 92cbe6fefff62fd932c78aa198fcc69f13830b3c
+.page{
+
+
 }
 .map{
   
