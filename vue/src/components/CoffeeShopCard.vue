@@ -7,13 +7,7 @@
         alt="Coffee shop image"
       />
       <div class="card-text">
-        <router-link
-          class="name"
-          v-bind:to="{
-            name: 'details',
-            params: { coffeeShopId: coffeeShop.shopId },
-          }"
-        >
+        <router-link class="name" v-bind:to="{ name: 'details', params: { coffeeShopId: coffeeShop.shopId },}">
           <h2 class="shop-name">{{ coffeeShop.shopName }}</h2>
         </router-link>
         <p class="location">{{ coffeeShop.shopLocation }}</p>
@@ -51,6 +45,7 @@
 </template>
 
 <script>
+import UserServices from '../services/UserServices';
 export default {
   components: {},
   name: "coffee-card",
@@ -59,11 +54,26 @@ export default {
   },
   methods: {
     setFavorite(value) {
+      UserServices.getUserFavorites() 
       this.$store.commit("SET_USER_FAVORITES_STATUS", {
-        coffeeShop: this.coffeeShop,
+        coffeeShop: this.coffeeShop, 
         value: value,
+      
       });
+      
     },
+    created() {
+      this.getUserFavorites()
+      if(this.coffeeShop.isFavorite === true)
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    }
+    
   },
 };
 </script>
