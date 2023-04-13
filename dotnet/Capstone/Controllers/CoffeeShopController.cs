@@ -29,9 +29,20 @@ namespace Capstone.Controllers
             return Ok(favorites);
         }
 
-        [HttpPut("favorites")]
+        [HttpPut()]
         [Authorize]
         public ActionResult AddToFavorites(UserFavorites newFavorite)
+        {
+            int userId = int.Parse(User.FindFirst("sub").Value); //int parse is setting the userId to whoever is currently logged in 
+            newFavorite.UserId = userId;
+            
+            coffeeShopDAO.AddToFavorites(userId, newFavorite.ShopId);
+
+            return Ok(); 
+        }
+        [HttpPut("unfavorite")]
+        [Authorize]
+        public ActionResult RemoveFavorites(UserFavorites newFavorite)
         {
             int userId = int.Parse(User.FindFirst("sub").Value); //int parse is setting the userId to whoever is currently logged in 
             newFavorite.UserId = userId;

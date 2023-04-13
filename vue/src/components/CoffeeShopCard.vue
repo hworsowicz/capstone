@@ -5,7 +5,7 @@
   
   <button 
           class="save"
-          v-on:click.prevent="setFavorite(true)"
+          v-on:click.prevent="addToUserFavorites()"
           v-if="!coffeeShop.isFavorite"
         >
           <i class="far fa-heart"></i>
@@ -48,6 +48,18 @@ export default {
       });
       
     },
+    addToUserFavorites() {
+      console.log("dylan")
+      const shop = {shopId: this.coffeeShop.shopId}
+      console.log(shop.id)
+      UserServices.addToUserFavorites(shop)
+      .then(response => {
+         if (response.status == 200){
+           this.setFavorite(true);
+        }
+       })
+    },
+
     created() {
       this.getUserFavorites()
       if(this.coffeeShop.isFavorite === true)
