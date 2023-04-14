@@ -172,18 +172,18 @@ export default {
 }
 
 .heart-icon {
-  
-  height: 100px;
+  height: 50px;
   width: 100px;
   background: url("../Images/hearty.png");
   background-position: left;
   cursor: pointer;
   border: none;
-  margin: none;
+  margin: none;;
+  
 
 }
 .heart-icon-red {
-  height: 100px;
+  height: 50px;
   width: 100px;
   background: url("../Images/hearty.png");
   background-position: right;
