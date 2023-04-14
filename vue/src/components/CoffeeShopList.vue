@@ -75,7 +75,7 @@ export default {
 
 body{
   margin-top: 100px;
-  background: url("../Images/splash.jpg");
+  background: #FCDEC0;
   width: 100%;
   height: 100%;
   border: 5px solid none;

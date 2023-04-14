@@ -159,14 +159,14 @@ export default {
 }
 
 .text .h3 {
-  font-family: 'Lucida Sans' sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 15px;
   font-weight: 600;
   
 }
 
 .text .p {
-  font-family: 'Lucida Sans' sans-serif;
+ font-family: 'Quicksand', sans-serif;
   color: #999999;
   font-size: 13px;
   border: black;
@@ -174,10 +174,10 @@ export default {
 
 .icon-box .span {
   margin-left: 10px;
-  font-family: 'Lucida Sans' sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 13px;
   font-weight: 500;
-  color: #865439;
+  color: #395186;
 }
 
 
@@ -197,4 +197,5 @@ export default {
 .save:hover .svg {
   fill: #ced8de;
 }
+
 </style>

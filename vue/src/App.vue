@@ -111,7 +111,6 @@ header {
   align-items: center;
   z-index: 1000;
   transition: 0.6s;
-  
   border-radius: 4px;
   box-shadow: 5px 5px 5px rgb(129, 127, 127) ;
 }
