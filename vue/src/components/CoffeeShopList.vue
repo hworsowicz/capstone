@@ -74,8 +74,8 @@ export default {
 */
 
 body{
-  margin-top: 100px;
-  background-image: url('../Images/cafe2.jpg');
+  margin-top: 125px;
+ background-color: #457B9D;
   width: 100%;
   height: 100%;
   border: 5px solid none;

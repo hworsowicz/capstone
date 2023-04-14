@@ -94,6 +94,7 @@ header {
   left: 0;
   width: 100%;
   padding: 15px 20px;
+  height: 100px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -169,5 +170,6 @@ header nav ul li {
   opacity: 0;
   transition: 0.5s;
 }
+
 
 </style>

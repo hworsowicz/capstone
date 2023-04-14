@@ -1,5 +1,8 @@
 <template>
   <section class="page">
+    <h1 v-if="favoriteShops.length === 0">Looks like you haven't favorited any shops, <router-link v-bind:to="{ name: 'coffeeShops' }" class="link">let's check some out!<span></span>
+            </router-link> </h1>
+    <h1 v-if="favoriteShops.length >= 1">{{$store.state.user.username}}, Great Choices!</h1>
       <router-link :to="{ name: 'home' }"> </router-link>
       <div class="cards">
         <div class="flex-card" v-for="c in favoriteShops" v-bind:key="c.coffeeShopId">
@@ -17,6 +20,7 @@
 import CoffeeShopServices from "../services/CoffeeShopServices";
 import CoffeeShopCard from "../components/CoffeeShopCard.vue";
 import UserServices from "../services/UserServices.js";
+
 //import CoffeeShopDetails from "../views/CoffeeShopDetails.vue";
 
 export default {
@@ -41,7 +45,6 @@ export default {
         })
         .catch((err) => console.error("Sorry could not load favorites", err));
     },
-    
   },
  
   computed: {
@@ -64,3 +67,14 @@ export default {
     row-gap: 1rem;
     column-gap: 1rem;
 }
+
+.link{
+ color: white;
+ text-decoration-line: none;
+}
+.page h1{
+  color: white;
+  padding-left: 20px;
+  padding-bottom: 20px;
+}
+</style>
