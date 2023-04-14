@@ -4,7 +4,12 @@
 <template>
   <div id="app" >
     <header>
-      <a class="logo"></a>
+      <a class="logo">
+        <router-link class="nav-item" v-bind:to="{ name: 'home' }">
+      
+        <img src="./Images/fulllogo.png"/> 
+            </router-link>
+      </a>
       <!-- If you start to get random styling you don't like, remove container from this div -->
       <nav id="nav">
         <ul>
@@ -18,10 +23,11 @@
           <li>
             <router-link
               class="nav-item"
-              v-bind:to="{ name: 'register' }"
-              v-if="!$store.state.token"
-              >&nbsp;&nbsp;Register<span></span
-            ></router-link>
+              v-bind:to="{ name: 'logout' }"
+              v-if="$store.state.token"
+            >
+              &nbsp;&nbsp;Logout<span></span>
+            </router-link>
           </li>
           <li>
             <router-link
@@ -33,25 +39,25 @@
             </router-link>
           </li>
           <li>
+             <router-link class="nav-item" v-bind:to="{ name: 'favorites' }"  v-if="$store.state.token">
+              
+              <!-- This is a font awesome icon -->
+              My Favorites<span></span> </router-link>
+          </li>
+          <li>
             <router-link
               class="nav-item"
-              v-bind:to="{ name: 'logout' }"
-              v-if="$store.state.token"
-            >
-              &nbsp;&nbsp;Logout<span></span>
-            </router-link>
+              v-bind:to="{ name: 'register' }"
+              v-if="!$store.state.token"
+              >&nbsp;&nbsp;Register<span></span
+            ></router-link>
           </li>
           <li>
             <router-link v-bind:to="{ name: 'coffeeShops' }" class="nav-item"
               >&nbsp;&nbsp;Coffee Shops<span></span>
             </router-link>
           </li>
-          <li>
-             <router-link class="nav-item" v-bind:to="{ name: 'favorites' }">
-              
-              <!-- This is a font awesome icon -->
-              My Favorites<span></span> </router-link>
-          </li>
+          
         </ul>
       </nav>
     </header>
@@ -87,7 +93,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 30px 100px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -112,6 +118,10 @@ header nav ul li {
   list-style: none;
   
   
+}
+.logo img{
+ height:50px;
+    overflow: hidden;
 }
 .nav-item {
   position: relative;

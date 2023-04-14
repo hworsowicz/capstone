@@ -104,6 +104,7 @@ export default {
   text-align: center;
   box-shadow: 7px 7px 15px rgb(102, 102, 102);
   transition: 0.2s ease-in-out;
+  margin-left: 30px;
 }
 .card .pic {
   width: 100%;
