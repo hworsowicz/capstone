@@ -109,10 +109,11 @@ export default {
 body{
   background: url("../Images/splash.jpg");
   background-size: cover;
+    height: 100vh;
   overflow: hidden;
 }
 ::selection{
-  background: #865439;
+   background: #789cd1;
 }
 .container{
   max-width: 440px;
