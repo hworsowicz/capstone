@@ -6,12 +6,15 @@
         <div class="flex-card" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId">
       <coffee-shop-card v-bind:coffeeShop="c" /> 
         </div>
+       
       </div>
+      <iframe src="https://my.atlistmaps.com/map/2c9cf803-873d-4c73-b722-d3ead35a7629?share=true" allow="geolocation 'self' https://my.atlistmaps.com" width="100%" height="400px" frameborder="0" scrolling="no" allowfullscreen></iframe>
       <!-- <coffee-shop-details v-bind:coffeeShop="c" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId"/>-->
       <!--<div class="map">
         <img  src="../Images/Columbus-Map.jpg" alt="Columbus Map" />
       </div>-->
   </section>
+  
 </template>
 
 <script>
@@ -81,6 +84,11 @@ body{
   border: 5px solid none;
   box-sizing: border-box;
   background-size: contain;
+}
+
+iframe{
+  padding: 1% ;
+  border-radius: 20px;
 }
 
 
