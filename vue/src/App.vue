@@ -93,7 +93,7 @@ header {
   align-items: center;
   z-index: 1000;
   transition: 0.6s;
-  background-color: blanchedalmond;
+  background-color: rgb(182, 158, 135);
   border-radius: 2px;
   box-shadow: 2px 2px 2px rgb(90, 90, 90) ;
 }
