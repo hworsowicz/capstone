@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1>Home</h1>
+    <h1></h1>
     <p></p>
   </div>
 </template>
@@ -16,6 +16,7 @@ export default {
   width: 100vw;
   background-image: url('../Images/hands.jpg');
   background-size: cover;
-  height: 110vh;
+  height: 100vh;
+ 
 }
 </style>

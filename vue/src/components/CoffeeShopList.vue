@@ -77,13 +77,15 @@ export default {
 */
 
 body{
-  margin-top: 100px;
-  background: #FCDEC0;
+  margin-top: 125px;
+ background-color: #457B9D;
   width: 100%;
   height: 100%;
   border: 5px solid none;
   box-sizing: border-box;
   background-size: contain;
+  
+
 }
 
 iframe{
