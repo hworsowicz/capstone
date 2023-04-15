@@ -1,6 +1,9 @@
 <template>
   <section class="page">
-      <h2></h2>
+      <h2>Coffe Shop List</h2>
+       <router-link v-bind:to="{ name: 'mapview' }" 
+              ><button>View on Map</button>
+            </router-link>
   
       <div class="cards">
         <div class="flex-card" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId">
@@ -8,7 +11,7 @@
         </div>
        
       </div>
-      <iframe src="https://my.atlistmaps.com/map/2c9cf803-873d-4c73-b722-d3ead35a7629?share=true" allow="geolocation 'self' https://my.atlistmaps.com" width="100%" height="700px" frameborder="0" scrolling="no" allowfullscreen></iframe>
+     
       <!-- <coffee-shop-details v-bind:coffeeShop="c" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId"/>-->
       <!--<div class="map">
         <img  src="../Images/Columbus-Map.jpg" alt="Columbus Map" />
@@ -21,12 +24,14 @@
 import CoffeeShopServices from "../services/CoffeeShopServices";
 import CoffeeShopCard from "../components/CoffeeShopCard.vue";
 import UserServices from "../services/UserServices.js";
+
 //import CoffeeShopDetails from "../views/CoffeeShopDetails.vue";
 
 export default {
   name: "coffee-shops",
   components: {
-    CoffeeShopCard,
+    CoffeeShopCard 
+ 
   },
   data() {
     return{
