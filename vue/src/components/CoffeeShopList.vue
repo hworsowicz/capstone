@@ -1,7 +1,7 @@
 <template>
   <section class="page">
       <h2></h2>
-      <router-link :to="{ name: 'home' }"> </router-link>
+  
       <div class="cards">
         <div class="flex-card" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId">
       <coffee-shop-card v-bind:coffeeShop="c" /> 
@@ -28,8 +28,17 @@ export default {
   components: {
     CoffeeShopCard,
   },
+  data() {
+    return{
+      toggle: false,
+      selectDisplayType() {
+        this.toggle = !this.toggle;
 
+      }
+    }
+  },
   methods: {
+    
     getCoffeeShops() {
       CoffeeShopServices.getAllCoffeeShops()
         .then((response) => {
@@ -61,9 +70,10 @@ export default {
 <style>
 .cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    row-gap: 5rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    row-gap: 100rem;
     column-gap: 1rem;
+    padding: 25px 10px 10px 0px;
 }
 /*.page{
   margin-top: 100px;
@@ -76,14 +86,16 @@ export default {
 }
 */
 
-body{
-  margin-top: 125px;
- background-color: #457B9D;
-  width: 100%;
-  height: 100%;
-  border: 5px solid none;
-  box-sizing: border-box;
-  background-size: contain;
+.page{
+  margin-top: 100px;
+  background-image: url('../Images/hands.jpg');
+  min-width: 100%;
+  height: 140vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: .8;
+      background-size: cover;
   
 
 }
