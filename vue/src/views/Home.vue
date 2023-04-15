@@ -1,13 +1,16 @@
 <template>
   <div class="home">
     <h1>Coming Soon!</h1>
-    <p></p>
+    <google-map-search/>
   </div>
 </template>
 
 <script>
+import GoogleMapSearch from '../components/GoogleMapSearch.vue';
 export default {
-  name: "home"
+  components: { GoogleMapSearch },
+  name: "home",
+    
 };
 </script>
 

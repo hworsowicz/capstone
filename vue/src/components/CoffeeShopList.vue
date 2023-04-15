@@ -25,7 +25,7 @@ import CoffeeShopServices from "../services/CoffeeShopServices";
 import CoffeeShopCard from "../components/CoffeeShopCard.vue";
 import UserServices from "../services/UserServices.js";
 
-//import CoffeeShopDetails from "../views/CoffeeShopDetails.vue";
+
 
 export default {
   name: "coffee-shops",
