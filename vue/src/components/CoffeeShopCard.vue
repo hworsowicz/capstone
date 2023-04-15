@@ -121,7 +121,6 @@ export default {
 }
 
 .save {
-  transition: 0.2s ease-in-out;
   border-radius: 10px;
   margin: 3px;
   width: 30px;
@@ -132,7 +131,7 @@ export default {
 
 
 .text {
-  margin: 20px;
+  margin: 10px;
   display: flex;
   flex-direction: column;
   
@@ -149,8 +148,8 @@ export default {
 
 .text .h3 {
   font-family: 'Quicksand', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 700;
 }
 
 .text .p {
@@ -172,7 +171,7 @@ export default {
 }
 
 .heart-icon {
-  height: 50px;
+  height: 70px;
   width: 100px;
   background: url("../Images/hearty.png");
   background-position: left;
@@ -183,7 +182,7 @@ export default {
 
 }
 .heart-icon-red {
-  height: 50px;
+  height: 70px;
   width: 100px;
   background: url("../Images/hearty.png");
   background-position: right;
@@ -208,14 +207,7 @@ export default {
 
   transform: scale(1.1);
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
-}
-
-.save:hover {
-  transform: scale(1.1) rotate(10deg);
-}
-
-.save:hover .svg {
-  fill: #ced8de;
+  
 }
 
 </style>

@@ -1,5 +1,5 @@
 <template>
-<body>  
+<section class="login-body">  
   <div class="container">
   <div class="wrapper">
   <div id="login" class="text-center">
@@ -46,7 +46,7 @@
   </div>
   </div>
   </div>
-  </body>
+  </section>
 </template>
 
 <script>
@@ -98,11 +98,19 @@ export default {
   box-sizing: border-box;
   font-family: 'Quicksand', sans-serif;
 }
-body{
+.login-body{
+  margin-top: 100px;
   background: url("../Images/splash.jpg");
-  background-size: cover;
+  min-width: 100%;
   height: 100vh;
-  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  opacity: .8;
+      background-size: cover;
+      /*background-size: 100% 100%;
+      background-size: contain;*/
+     
 }
 ::selection{
   background: #789cd1;
