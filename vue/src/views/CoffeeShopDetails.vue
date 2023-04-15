@@ -154,7 +154,7 @@ export default {
 .feature-text p{
   padding: 0 20px;
   text-align: initial;
-  font-size: 30px;
+  font-size: 20px;
   color: #000;
 }
 .features-menu{

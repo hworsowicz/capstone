@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <h1></h1>
+    <h1>Coming Soon!</h1>
     <p></p>
   </div>
 </template>
@@ -18,5 +18,11 @@ export default {
   background-size: cover;
   height: 100vh;
  
+}
+h1{
+  font-size: 60px;
+  color: white;
+  text-align: center;
+  padding-top: 300px;
 }
 </style>
