@@ -101,16 +101,9 @@ export default {
 .login-body{
   margin-top: 100px;
   background: url("../Images/splash.jpg");
-  min-width: 100%;
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  opacity: .8;
-      background-size: cover;
-      /*background-size: 100% 100%;
-      background-size: contain;*/
-     
+  background-size: cover;
+    height: 100vh;
+  overflow: hidden;
 }
 ::selection{
   background: #789cd1;
