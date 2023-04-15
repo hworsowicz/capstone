@@ -90,6 +90,7 @@ export default {
   background-size: cover;
   background-position: center;
   height: 100vh;
+  margin: 0;
 
 }
 .banner-text {
@@ -101,7 +102,7 @@ export default {
 }
 #feature{
   width: 100%;
-  padding: 70px 0;
+  padding: 50px 0;
 }
 
 .title-text {
@@ -129,9 +130,7 @@ export default {
   align-items: center;
   text-align: left;
 }
-/*.features{
-  flex-basis: 50%;
-}*/
+
 .features-img {
   flex-basis: 50%;
   margin: auto;
