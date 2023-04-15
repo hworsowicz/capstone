@@ -23,6 +23,9 @@
         public string Gallery3 { get; set; }
         public string Gallery4 { get; set; }
 
+        public decimal Latitude { get; set; }
+        public decimal Longitude { get; set; }
+
      
     }
 }
