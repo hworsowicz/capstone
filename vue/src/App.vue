@@ -17,7 +17,7 @@
             <router-link class="nav-item" v-bind:to="{ name: 'home' }">
               
               <!-- This is a font awesome icon -->
-              Home<span></span>
+              Home<transition name="pop"><span class="blue-filler"></span></transition>
             </router-link>
           </li>
           <li>
@@ -26,7 +26,7 @@
               v-bind:to="{ name: 'logout' }"
               v-if="$store.state.token"
             >
-              &nbsp;&nbsp;<span>Logout</span>
+              &nbsp;&nbsp;Logout<span class="blue-filler"></span>
             </router-link>
           </li>
           <li>
@@ -35,26 +35,26 @@
               v-bind:to="{ name: 'login' }"
               v-if="!$store.state.token"
             >
-              &nbsp;&nbsp;Login<span></span>
+              &nbsp;&nbsp;Login<span class="blue-filler"></span>
             </router-link>
           </li>
           <li>
              <router-link class="nav-item" v-bind:to="{ name: 'favorites' }"  v-if="$store.state.token">
               
               <!-- This is a font awesome icon -->
-              My Favorites<span></span> </router-link>
+              My Favorites<span class="blue-filler"></span></router-link>
           </li>
           <li>
             <router-link
               class="nav-item"
               v-bind:to="{ name: 'register' }"
               v-if="!$store.state.token"
-              >&nbsp;&nbsp;Register<span></span
+              >&nbsp;&nbsp;Register<span class="blue-filler"></span
             ></router-link>
           </li>
           <li>
             <router-link v-bind:to="{ name: 'coffeeShops' }" class="nav-item"
-              >&nbsp;&nbsp;Coffee Shops<span></span>
+              >&nbsp;&nbsp;Coffee Shops<span class="blue-filler"></span>
             </router-link>
           </li>
           
@@ -117,33 +117,33 @@ header nav ul {
 header nav ul li {
   position: relative;
   list-style: none;
-  
-  
 }
+
 .logo img{
  height:50px;
     overflow: hidden;
 }
+
 .nav-item {
   position: relative;
- font-size: 1.0em;
+  font-size: 1.0em;
     color: black;
     font-weight: 600;
     text-decoration: none;
     margin-left: 20px;
     padding: 6px 15px;
-    transition: .5s;
-    
+    transition: .5s; 
 }
 
 .nav-item:hover{
   text-decoration: none;
+  color: white;
 }
 
 .nav li {
   position: relative;
   font-size: 1em;
-  color: #8fc1d4;
+  
   font-weight: 600;
   text-decoration: none;
   margin-left: 20px;
@@ -152,24 +152,29 @@ header nav ul li {
   
 }
 
-.nav router-link:hover,
-.nav a.active {
-  color: black;
-}
-
-.nav span {
+.blue-filler {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #8fc1d4;
+  border: solid;
+  border-color: #8FC1D4;
+  border-width: 3px;
+  background: #8FC1D4;
   border-radius: 30px;
   z-index: -1;
   transform: scale(0);
-  opacity: 0;
-  transition: 0.5s;
+  opacity: 0 ;
+  transition: transform .5s;
 }
+
+.nav-item:hover .blue-filler
+ { 
+   transform: scale(1);
+    opacity: 1;
+}
+
 
 
 </style>
