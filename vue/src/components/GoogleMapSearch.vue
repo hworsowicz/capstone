@@ -21,12 +21,15 @@
         icon="https://maps.google.com/mapfiles/ms/icons/red-dot.png"
       />
     </GmapMap>
+    <coffee-shop-card />
   </div>
 </template>
 <script>
+import CoffeeShopCard from "../components/CoffeeShopCard.vue"
 import { mapGetters } from "vuex";
 import CoffeeShopServices from "../services/CoffeeShopServices";
 export default {
+  components: { CoffeeShopCard },
   name: "GoogleMap",
   computed: {
     ...mapGetters({
@@ -44,10 +47,16 @@ export default {
   },
   mounted() {
     this.geolocate();
-    this.addCoffeeShopMarkers();
+    // Retrieve persisted markers and coffee shop markers from local storage
+  const persistedMarkers = JSON.parse(localStorage.getItem('markers')) || [];
+  const persistedCoffeeShopMarkers = JSON.parse(localStorage.getItem('coffeeShopMarkers')) || [];
+  this.markers = persistedMarkers;
+  this.coffeeShopMarkers = persistedCoffeeShopMarkers;
+   
   },
   created() {
     this.getCoffeeShops();
+    this.addCoffeeShopMarkers();
   },
   methods: {
     getCoffeeShops() {
@@ -73,6 +82,8 @@ export default {
         this.places.push(this.currentPlace);
         this.center = marker;
         this.currentPlace = null;
+        // Persist markers in local storage
+        localStorage.setItem('markers', JSON.stringify(this.markers));
       }
     },
     addCoffeeShopMarkers() {
@@ -83,6 +94,8 @@ export default {
           position: { lat: coffeeShop.latitude, lng: coffeeShop.longitude },
         }
         this.coffeeShopMarkers.push(coffeeShopMarker);
+        // Persist coffee shop markers in local storage
+        localStorage.setItem('coffeeShopMarkers', JSON.stringify(this.coffeeShopMarkers));
       }
     },
     

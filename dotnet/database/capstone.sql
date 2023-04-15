@@ -118,4 +118,6 @@ INSERT INTO user_favorites (user_id, shop_id) VALUES
 					THEN 1
 					ELSE 0 END) AS IsFavorite
 	FROM coffee_shops c
+	SELECT shop_id, shop_name, shop_location, shop_has_spirits, image_path, about_shop, hours_weekdays, hours_weekends, price_range, website, address_link, header_picture_path, map_picture, menu_picture, gallery_1, gallery_2, gallery_3, gallery_4, latitude, longitude,
+                  (CASE WHEN EXISTS(SELECT 1 FROM user_favorites uf WHERE uf.shop_id = c.shop_id AND uf.user_id = 3) THEN 1 ELSE 0 END) AS IsFavorite FROM coffee_shops c
 

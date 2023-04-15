@@ -64,7 +64,7 @@ namespace Capstone.DAO
         {
             List<CoffeeShop> result = new List<CoffeeShop>();
 
-            const string sql = "SELECT shop_id, shop_name, shop_location, shop_has_spirits, image_path, about_shop, hours_weekdays, hours_weekends, price_range, website, address_link, header_picture_path, map_picture, menu_picture, gallery_1, gallery_2, gallery_3, gallery_4, latitude, longitude" +
+            const string sql = "SELECT shop_id, shop_name, shop_location, shop_has_spirits, image_path, about_shop, hours_weekdays, hours_weekends, price_range, website, address_link, header_picture_path, map_picture, menu_picture, gallery_1, gallery_2, gallery_3, gallery_4, latitude, longitude, " +
                 "  (CASE WHEN EXISTS(SELECT 1 FROM user_favorites uf WHERE uf.shop_id = c.shop_id AND uf.user_id = @userId) THEN 1 ELSE 0 END) AS IsFavorite FROM coffee_shops c";
 
 
@@ -165,7 +165,7 @@ namespace Capstone.DAO
             coffeeShop.Gallery4 = Convert.ToString(reader["gallery_4"]);
             coffeeShop.IsFavorite = Convert.ToBoolean(reader["IsFavorite"]);
             coffeeShop.Latitude = Convert.ToDecimal(reader["latitude"]);
-            coffeeShop.Latitude = Convert.ToDecimal(reader["longitude"]);
+            coffeeShop.Longitude = Convert.ToDecimal(reader["longitude"]);
 
             return coffeeShop;
         }
