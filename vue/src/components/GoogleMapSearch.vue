@@ -1,12 +1,17 @@
 <template>
-  <div>
-    <div>
-      <h2>Search and add a pin</h2>
-      <GmapAutocomplete @place_changed="setPlace" />
-      <button @click="addMarker">Add</button>
-    </div>
-    <br />
-    <GmapMap :center="center" :zoom="12" style="width:100%; height: 400px;">
+  <div class="container">
+      <div id="content">
+        <form class='form-inline'>
+          <div class="input-group">
+             <GmapAutocomplete  id='search' class="form-control search-form"  @place_changed="setPlace" />
+            <span class="input-group-btn" style="width:39px">
+              <button id="search-this" type="button" class="pull-right btn btn-default search-btn" @click="addMarker">Search
+              </button>
+            </span>
+          </div>
+        </form>
+        <p class="text-center">Some centered text</p>
+        <GmapMap :center="center" :zoom="12" style="width:100%; height: 400px;">
       <GmapMarker
         :key="index"
         v-for="(m, index) in markers"
@@ -22,7 +27,10 @@
       />
     </GmapMap>
     <coffee-shop-card />
-  </div>
+  </div>  
+    </div>
+ 
+    
 </template>
 <script>
 import CoffeeShopCard from "../components/CoffeeShopCard.vue"
@@ -118,6 +126,41 @@ export default {
 
 
 
-<style>
+<style scoped>
+
+.well {
+  background-color: #ffffee
+}
+
+
+
+.search-form {
+  border-radius: 30px 0 0 30px;
+}
+
+.input-group {
+  width:100%;
+}
+
+input-group-btn {
+  max-width:38px;
+}
+
+#search {
+  border: 1px;
+}
+
+.search-btn {
+  cursor:pointer;
+  border-radius: 0 30px 30px 0; 
+  background-color:#fff;
+  border-color:#669;
+  padding-top: 6.5px;
+  
+}
+
+.text-center {
+  color: #fff;
+}
 
 </style>

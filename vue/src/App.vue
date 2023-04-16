@@ -7,7 +7,7 @@
       <a class="logo">
         <router-link class="nav-item" v-bind:to="{ name: 'home' }">
       
-        <img src="./Images/fulllogo2.png"/> 
+        <img src="./Images/newLogo.png"/> 
             </router-link>
       </a>
       <!-- If you start to get random styling you don't like, remove container from this div -->
@@ -94,7 +94,7 @@ body{
   background-position: center center;
   background-attachment: fixed;
   background-size: cover;
-  opacity: .9;
+
 
 }
 

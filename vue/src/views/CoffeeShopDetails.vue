@@ -168,12 +168,14 @@ export default {
     width: 90%;
   border-radius: 10px;
   align-items: center;
+ 
 }
 .features-menu img{
   width: 90%;
   border-radius: 10px;
   align-items: center;
   padding-left: 20%;
+   margin-bottom: 20px;
 }
 @media screen and (max-width: 770px) {
   .title-text h1{
