@@ -15,10 +15,10 @@
       </div>
       <div class="feature-box">
         <div class="features">
-          <h1>Our Story:</h1>
+          <h1 class="animate__fadeInLeft">Our Story:</h1>
           <div class="features-desc">
             <div class="feature-text">
-              <p>{{ coffeeShop.about }}</p>
+              <p class="animate__fadeInLeft">{{ coffeeShop.about }}</p>
             </div>
           </div>
         </div>
@@ -62,6 +62,7 @@
 
 
 <script>
+import 'animate.css';
 import CoffeeShopServices from "../services/CoffeeShopServices.js";
 import CoffeeShopCard from "../components/CoffeeShopCard.vue";
 
@@ -85,7 +86,7 @@ export default {
 <style>
 
 #banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), #fff5),
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #fff5),
     url(../Images/cafe.jpg);
   background-size: cover;
   background-position: center;
@@ -94,7 +95,7 @@ export default {
 
 }
 .bodyDetails{
-  background-image: url('../Images/beige.jpg');
+  background-image: url('../Images/modern.jpg');
   min-width: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -152,6 +153,7 @@ export default {
   margin-bottom: 10px;
   font-weight: 100;
   color: #000;
+
 }
 .features-desc {
   display: flex;
@@ -163,6 +165,11 @@ export default {
   text-align: initial;
   font-size: 20px;
   color: #000;
+  
+}
+.animate__fadeInLeft{
+  animation-duration: 1.7s;
+  animation-delay: 1s;
 }
 .features-menu{
     width: 90%;
