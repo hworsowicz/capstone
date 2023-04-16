@@ -99,6 +99,7 @@ h2{
 .viewmap{
   margin-left: 15px;
   padding: 0 5px 0 5px;
+  background-color: rgb(218, 193, 171);;
 }
 iframe{
   padding: 1% ;
