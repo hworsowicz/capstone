@@ -1,8 +1,8 @@
 <template>
   <section class="page">
-    <h1 v-if="favoriteShops.length === 0">Looks like you haven't favorited any shops, <router-link v-bind:to="{ name: 'coffeeShops' }" class="link">let's check some out!<span></span>
+    <h1 class="hasNoFavs" v-if="favoriteShops.length === 0">Looks like you haven't favorited any shops, <router-link v-bind:to="{ name: 'coffeeShops' }" class="link"><span>let's check some out!</span>
             </router-link> </h1>
-    <h1 v-if="favoriteShops.length >= 1">{{$store.state.user.username}}, Great Choices!</h1>
+    <h1 class="hasFavs" v-if="favoriteShops.length >= 1">{{$store.state.user.username}}, Great Choices!</h1>
       <router-link :to="{ name: 'home' }"> </router-link>
       <div class="cards">
         <div class="flex-card" v-for="c in favoriteShops" v-bind:key="c.coffeeShopId">
@@ -67,14 +67,26 @@ export default {
     row-gap: 1rem;
     column-gap: 1rem;
 }
+.hasFavs{
+  padding-top: 100px;
+  color: #fff;
+  text-transform: capitalize; /* this will capitalize the first letter*/
+}
 
+
+.hasNoFavs{
+ padding-top: 100px;
+ color: #fff;
+ text-transform: capitalize;
+ font-weight: bold;
+  
+}
 .link{
- color: white;
- text-decoration-line: none;
+  color: #fff;
+  position: relative;
+  text-decoration: none;
+  
 }
-.page h1{
-  color: white;
-  padding-left: 20px;
-  padding-bottom: 20px;
-}
+
+
 </style>
