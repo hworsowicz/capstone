@@ -84,8 +84,11 @@ export default {
 .link{
   color: #fff;
   position: relative;
-  text-decoration: none;
+ 
   
+}
+.link:hover{
+  color: rgb(151, 196, 223);
 }
 
 

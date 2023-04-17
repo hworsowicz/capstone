@@ -10,7 +10,7 @@
             </span>
           </div>
         </form>
-        <p class="text-center">Some centered text</p>
+        <p class="text-center">Find coffee near you!</p>
         <GmapMap :center="center" :zoom="12" style="width:100%; height: 400px;">
       <GmapMarker
         :key="index"
@@ -105,6 +105,7 @@ export default {
           position: { lat: coffeeShop.latitude, lng: coffeeShop.longitude },
         }
         this.coffeeShopMarkers.push(coffeeShopMarker);
+        
         // Persist coffee shop markers in local storage
         localStorage.setItem('coffeeShopMarkers', JSON.stringify(this.coffeeShopMarkers));
       }

@@ -95,19 +95,11 @@ h2{
   padding-left: 10px;
   color: white;
 }
-.page{
-  background-image: url('../Images/cafe2.jpg');
-  min-height: 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
- 
-  background-size: cover;
 
-}
 .viewmap{
   margin-left: 15px;
   padding: 0 5px 0 5px;
+  background-color: rgb(218, 193, 171);;
 }
 iframe{
   padding: 1% ;
