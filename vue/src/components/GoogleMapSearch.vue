@@ -43,9 +43,11 @@ export default {
     ...mapGetters({
       coffeeShops: "coffeeShops",
     }),
+    
   },
   data() {
     return {
+      routes: [], //direction services will return an array of routes
       center: { lat: 39.99796, lng: -83.04213 },
       currentPlace: null,
       markers: [],
@@ -77,6 +79,7 @@ export default {
           console.error("Sorry could not load shops", err)
         );
     },
+ 
     setPlace(place) {
       this.currentPlace = place;
     },
@@ -106,6 +109,7 @@ export default {
         localStorage.setItem('coffeeShopMarkers', JSON.stringify(this.coffeeShopMarkers));
       }
     },
+    
     
     geolocate: function() {
       navigator.geolocation.getCurrentPosition(position => {
