@@ -15,6 +15,8 @@ Vue.use(VueGoogleMaps, {
 });
 
 
+
+
 axios.defaults.baseURL = process.env.VUE_APP_REMOTE_API;
 
 new Vue({
