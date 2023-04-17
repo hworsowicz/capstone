@@ -19,7 +19,7 @@
         }"
       >
       <a href="#" class="read-more">
-          Tell Me More <span class="sr-only">about this is some title</span>
+          Tell Me More 
           <svg xmlns="http://www.w3.org/2000/svg" class="icon" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
           </svg>
@@ -173,6 +173,7 @@ export default {
 }
 .read-more{
   text-decoration: none;
+  
 }
 
 .heart-icon {
@@ -214,6 +215,7 @@ export default {
   box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
   
 }
+/* TELL ME MORE TAG*/
 .sr-only:not(:focus):not(:active) {
   clip: rect(0 0 0 0); 
   clip-path: inset(50%);
@@ -223,6 +225,7 @@ export default {
   white-space: nowrap; 
   width: 1px;
 }
+/* TELL ME MORE TAG*/
 .text a .icon {
   min-width: 24px;
   width: 24px;
@@ -232,7 +235,7 @@ export default {
   opacity: var(--link-icon-opacity);
   transition: all 0.3s;
 }
-
+/* TELL ME MORE TAG*/
 .text:has(:hover, :focus) {
   --img-scale: 1.1;
   --title-color: #000;
@@ -240,18 +243,20 @@ export default {
   --link-icon-opacity: 1;
   
 }
+/* TELL ME MORE TAG*/
 .text a {
   display: inline-flex;
   align-items: center;
   text-decoration: none;
-  color: #28666e;
+  color: #457B9D;
 }
+/* TELL ME MORE TAG*/
 .text a::after {
   position: absolute;
-
   cursor: pointer;
   content: "";
 }
+/* TELL ME MORE TAG*/
 .text{
   --img-scale: 1.001;
   --title-color: black;

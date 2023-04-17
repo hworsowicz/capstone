@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bodyDetails">
     <section id="banner">
       <h1 class="banner-text">{{ coffeeShop.shopName }}</h1>
     </section>
@@ -15,10 +15,10 @@
       </div>
       <div class="feature-box">
         <div class="features">
-          <h1>Our Story:</h1>
+          <h1 class="animate__fadeInLeft">Our Story:</h1>
           <div class="features-desc">
             <div class="feature-text">
-              <p>{{ coffeeShop.about }}</p>
+              <p class="animate__fadeInLeft">{{ coffeeShop.about }}</p>
             </div>
           </div>
         </div>
@@ -62,6 +62,7 @@
 
 
 <script>
+import 'animate.css';
 import CoffeeShopServices from "../services/CoffeeShopServices.js";
 import CoffeeShopCard from "../components/CoffeeShopCard.vue";
 
@@ -85,13 +86,21 @@ export default {
 <style>
 
 #banner {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), #fff5),
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #fff5),
     url(../Images/cafe.jpg);
   background-size: cover;
   background-position: center;
   height: 100vh;
   margin: 0;
 
+}
+.bodyDetails{
+  background-image: url('../Images/beige.jpg');
+  min-width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
 }
 .banner-text {
   text-align: center;
@@ -144,6 +153,7 @@ export default {
   margin-bottom: 10px;
   font-weight: 100;
   color: #000;
+
 }
 .features-desc {
   display: flex;
@@ -155,17 +165,24 @@ export default {
   text-align: initial;
   font-size: 20px;
   color: #000;
+  
+}
+.animate__fadeInLeft{
+  animation-duration: 1.7s;
+  animation-delay: 1s;
 }
 .features-menu{
     width: 90%;
   border-radius: 10px;
   align-items: center;
+ 
 }
 .features-menu img{
   width: 90%;
   border-radius: 10px;
   align-items: center;
   padding-left: 20%;
+   margin-bottom: 20px;
 }
 @media screen and (max-width: 770px) {
   .title-text h1{
@@ -190,6 +207,12 @@ export default {
   .features-map img{
     width: 100%
   }
+  .banner-text{
+  text-align: center;
+  color: #fff;
+  padding-top: 170px;
+  font-size: 80px;
+  }
 
 }
 #photos{
@@ -211,12 +234,25 @@ export default {
   flex-basis: 48%;
   text-align: center;
   border-radius: 7px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   color: #fff;
 }
 .single-photo img{
   width: 100%;
   border-radius: 7px;
+}
+.single-photo img:hover{
+  transform: scale(1.1);
+  -webkit-transform: rotate(-6deg);
+  -moz-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  -ms-transform: rotate(-6deg);
+  box-shadow: 7px 7px 15px rgb(0, 0, 0);
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 </style>

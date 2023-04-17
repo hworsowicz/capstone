@@ -19,6 +19,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
+ 
       background-size: cover;
       /*background-size: 100% 100%;
       background-size: contain;*/

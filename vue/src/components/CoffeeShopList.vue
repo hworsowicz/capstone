@@ -1,8 +1,8 @@
 <template>
   <section class="page">
-      <h2>Coffe Shop List</h2>
+      <h2>Coffee Shops</h2>
        <router-link v-bind:to="{ name: 'mapview' }" 
-              ><button>View on Map</button>
+              ><button class="viewmap">View on Map</button>
             </router-link>
   
       <div class="cards">
@@ -90,21 +90,17 @@ export default {
   background-size: contain;
 }
 */
-
-.page{
+h2{
   margin-top: 100px;
-  background-image: url('../Images/hands.jpg');
-  min-width: 100%;
-  height: 140vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  opacity: .8;
-      background-size: cover;
-  
-
+  padding-left: 10px;
+  color: white;
 }
 
+.viewmap{
+  margin-left: 15px;
+  padding: 0 5px 0 5px;
+  background-color: rgb(218, 193, 171);;
+}
 iframe{
   padding: 1% ;
   border-radius: 20px;

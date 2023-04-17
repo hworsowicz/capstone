@@ -7,7 +7,7 @@
       <a class="logo">
         <router-link class="nav-item" v-bind:to="{ name: 'home' }">
       
-        <img src="./Images/fulllogo.png"/> 
+        <img src="./Images/newLogo.png"/> 
             </router-link>
       </a>
       <!-- If you start to get random styling you don't like, remove container from this div -->
@@ -87,6 +87,16 @@
     font-family: 'Quicksand', sans-serif;
     
 }
+body{
+  background-image: url('Images/cafe2.jpg');
+  min-height: 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+
+
+}
 
 header {
   position: fixed;
@@ -94,13 +104,13 @@ header {
   left: 0;
   width: 100%;
   padding: 15px 20px;
-  height: 100px;
+  height: 85px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 1000;
   transition: 0.6s;
-  background-color: rgb(182, 158, 135);
+  background-color: rgb(218, 193, 171);
   border-radius: 2px;
   box-shadow: 2px 2px 2px rgb(90, 90, 90) ;
 }
@@ -152,6 +162,11 @@ header nav ul li {
   
 }
 
+@media(max-width: 700px) { //will keep nav from being
+  .nav-item{
+    display: block;
+  }
+}
 .blue-filler {
   position: absolute;
   top: 0;

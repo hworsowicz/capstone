@@ -1,8 +1,5 @@
 <template>
-
   <div class="container">
-    
-
       <div id="content">
         <form class='form-inline'>
           <div class="input-group">
@@ -14,47 +11,64 @@
           </div>
         </form>
         <p class="text-center">Find coffee near you!</p>
-        <GmapMap :center="center" :zoom="12" style="width:100%; height: 400px;">
-      <GmapMarker
-        :key="index"
-        v-for="(m, index) in markers"
-        :position="m.position"
-        @click="center = m.position"
-      />
-      <GmapMarker
-        :key="'coffee-shop-' + index"
-        v-for="(coffeeShopMarker, index) in coffeeShopMarkers"
-        :position="coffeeShopMarker.position"
-        @click="center = coffeeShopMarker.position"
-        icon="https://maps.google.com/mapfiles/ms/icons/red-dot.png"
-      />
-    </GmapMap>
+       <v-mapbox
+  access-token="pk...."
+  map-style="mapbox://styles/mapbox/satellite-streets-v10"
+  :center="[52, 3]"
+  :zoom="10"
+  :pitch="60"
+  :bearing="-132"
+  :min-zoom="5"
+  id="map"
+  ref="map"
+>
+</v-mapbox>
     <coffee-shop-card />
   </div>
     </div>
 </template>
 <script>
-import CoffeeShopCard from "../components/CoffeeShopCard.vue"
+
+
+
+import CoffeeShopCard from "../components/CoffeeShopCard.vue";
 import { mapGetters } from "vuex";
 import CoffeeShopServices from "../services/CoffeeShopServices";
+import Vue2MapboxGL from 'vue2mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+// for the v-mapbox-geocoder
+import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
+
+Vue.use(Vue2MapboxGL);
 export default {
   components: { CoffeeShopCard },
   name: "GoogleMap",
   computed: {
+   //google: gmapApi,
     ...mapGetters({
       coffeeShops: "coffeeShops",
     }),
   },
   data() {
+    
     return {
       center: { lat: 39.99796, lng: -83.04213 },
       currentPlace: null,
       markers: [],
       coffeeShopMarkers: [],
       places: [],
+      mapRef: null,
+   map: null,
+
+    infoWindow: null,
     };
   },
+
   mounted() {
+  let map = this.$refs.map.map
+  map.on('load', () => {
+  map.addLayer(style)
+}),
     this.geolocate();
     // Retrieve persisted markers and coffee shop markers from local storage
   const persistedMarkers = JSON.parse(localStorage.getItem('markers')) || [];
@@ -65,8 +79,10 @@ export default {
   created() {
     this.getCoffeeShops();
     this.addCoffeeShopMarkers();
+    //this.initMap();
   },
   methods: {
+
     getCoffeeShops() {
       CoffeeShopServices.getAllCoffeeShops()
         .then((response) => {
@@ -75,8 +91,10 @@ export default {
         })
         .catch((err) =>
           console.error("Sorry could not load shops", err)
-        );
+        ); 
     },
+   
+
     setPlace(place) {
       this.currentPlace = place;
     },
@@ -142,5 +160,8 @@ input-group-btn {
 }
 .text-center {
   color: #fff;
+}
+.mapHome{
+  border-radius: 10px;
 }
 </style>

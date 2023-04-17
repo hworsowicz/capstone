@@ -5,7 +5,7 @@ export default {
         return axios.get('/coffee-shops')
     },
     addToUserFavorites(shop){
-        console.log("DJ")
+       
         return axios.put('/coffee-shops', shop)
     },
     removeFromUserFavorites(shop){
