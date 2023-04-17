@@ -95,7 +95,7 @@ export default {
 
 }
 .bodyDetails{
-  background-image: url('../Images/modern.jpg');
+  background-image: url('../Images/beige.jpg');
   min-width: 100%;
   background-repeat: no-repeat;
   background-position: center;
