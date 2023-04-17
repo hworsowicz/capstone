@@ -5,13 +5,16 @@ import store from './store/index'
 import axios from 'axios'
 import * as VueGoogleMaps from 'vue2-google-maps'
 
+
 Vue.config.productionTip = false
 
-Vue.use(VueGoogleMaps, {
+
+Vue.use( VueGoogleMaps, {
   load: {
     key: 'AIzaSyDoTXDGfEQf71uainUTWyAKmuH6VUUreTY',
     libraries: 'places', 
-  }
+  },
+  installComponents: true
 });
 
 

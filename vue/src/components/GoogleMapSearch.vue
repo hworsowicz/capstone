@@ -1,167 +1,26 @@
 <template>
-  <div class="container">
-      <div id="content">
-        <form class='form-inline'>
-          <div class="input-group">
-             <GmapAutocomplete  id='search' class="form-control search-form"  @place_changed="setPlace" />
-            <span class="input-group-btn" style="width:39px">
-              <button id="search-this" type="button" class="pull-right btn btn-default search-btn" @click="addMarker">Search
-              </button>
-            </span>
-          </div>
-        </form>
-        <p class="text-center">Find coffee near you!</p>
-       <v-mapbox
-  access-token="pk...."
-  map-style="mapbox://styles/mapbox/satellite-streets-v10"
-  :center="[52, 3]"
-  :zoom="10"
-  :pitch="60"
-  :bearing="-132"
-  :min-zoom="5"
-  id="map"
-  ref="map"
+ <GmapMap
+  :center="{lat:10, lng:10}"
+  :zoom="7"
+  map-type-id="terrain"
+  style="width: 500px; height: 300px"
 >
-</v-mapbox>
-    <coffee-shop-card />
-  </div>
-    </div>
+  <GmapMarker
+    :key="index"
+    v-for="(m, index) in markers"
+    :position="m.position"
+    :clickable="true"
+    :draggable="true"
+    @click="center=m.position"
+  />
+</GmapMap>
+
 </template>
 <script>
 
-
-
-import CoffeeShopCard from "../components/CoffeeShopCard.vue";
-import { mapGetters } from "vuex";
-import CoffeeShopServices from "../services/CoffeeShopServices";
-import Vue2MapboxGL from 'vue2mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
-// for the v-mapbox-geocoder
-import '@mapbox/mapbox-gl-geocoder/dist/mapbox-gl-geocoder.css';
-
-Vue.use(Vue2MapboxGL);
 export default {
-  components: { CoffeeShopCard },
-  name: "GoogleMap",
-  computed: {
-   //google: gmapApi,
-    ...mapGetters({
-      coffeeShops: "coffeeShops",
-    }),
-  },
-  data() {
-    
-    return {
-      center: { lat: 39.99796, lng: -83.04213 },
-      currentPlace: null,
-      markers: [],
-      coffeeShopMarkers: [],
-      places: [],
-      mapRef: null,
-   map: null,
-
-    infoWindow: null,
-    };
-  },
-
-  mounted() {
-  let map = this.$refs.map.map
-  map.on('load', () => {
-  map.addLayer(style)
-}),
-    this.geolocate();
-    // Retrieve persisted markers and coffee shop markers from local storage
-  const persistedMarkers = JSON.parse(localStorage.getItem('markers')) || [];
-  const persistedCoffeeShopMarkers = JSON.parse(localStorage.getItem('coffeeShopMarkers')) || [];
-  this.markers = persistedMarkers;
-  this.coffeeShopMarkers = persistedCoffeeShopMarkers;
-  },
-  created() {
-    this.getCoffeeShops();
-    this.addCoffeeShopMarkers();
-    //this.initMap();
-  },
-  methods: {
-
-    getCoffeeShops() {
-      CoffeeShopServices.getAllCoffeeShops()
-        .then((response) => {
-          console.log(response.data);
-          this.$store.commit("SET_COFFEE_SHOPS", response.data);
-        })
-        .catch((err) =>
-          console.error("Sorry could not load shops", err)
-        ); 
-    },
-   
-
-    setPlace(place) {
-      this.currentPlace = place;
-    },
-    addMarker() {
-      if (this.currentPlace) {
-        const marker = {
-          lat: this.currentPlace.geometry.location.lat(),
-          lng: this.currentPlace.geometry.location.lng(),
-        };
-        this.markers.push({ position: marker });
-        this.places.push(this.currentPlace);
-        this.center = marker;
-        this.currentPlace = null;
-        // Persist markers in local storage
-        localStorage.setItem('markers', JSON.stringify(this.markers));
-      }
-    },
-    addCoffeeShopMarkers() {
-      const coffeeShops = this.$store.state.coffeeShops;
-      for (let i = 0; i < coffeeShops.length; i++) {
-        const coffeeShop = coffeeShops[i];
-        const coffeeShopMarker = {
-          position: { lat: coffeeShop.latitude, lng: coffeeShop.longitude },
-        }
-        this.coffeeShopMarkers.push(coffeeShopMarker);
-        // Persist coffee shop markers in local storage
-        localStorage.setItem('coffeeShopMarkers', JSON.stringify(this.coffeeShopMarkers));
-      }
-    },
-    geolocate: function() {
-      navigator.geolocation.getCurrentPosition(position => {
-        this.center = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        };
-      });
-    }
-  }
 }
 </script>
-<style scoped>
-.well {
-  background-color: #FFFFEE
-}
-.search-form {
-  border-radius: 30px 0 0 30px;
-}
-.input-group {
-  width:100%;
-}
-input-group-btn {
-  max-width:38px;
-}
-#search {
-  border: 1px;
-}
-.search-btn {
-  cursor:pointer;
-  border-radius: 0 30px 30px 0;
-  background-color:#fff;
-  border-color:#669;
-  padding-top: 6.5px;
-}
-.text-center {
-  color: #fff;
-}
-.mapHome{
-  border-radius: 10px;
-}
+<style>
+
 </style>
