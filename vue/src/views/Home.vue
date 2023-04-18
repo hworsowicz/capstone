@@ -1,7 +1,9 @@
 <template>
   <div class="home">
-    <h1>Coming Soon!</h1>
+    <h1>Find your closest cup of coffee</h1>
+    
     <google-map-search/>
+   
   </div>
 </template>
 <script>
