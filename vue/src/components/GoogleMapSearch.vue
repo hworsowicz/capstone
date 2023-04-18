@@ -32,6 +32,7 @@ export default {
     return {
       place: null,
       directions: null,
+      //destination will need to be a selected shop, which will be a list that is its own component
     };
   },
   methods: {
@@ -70,6 +71,7 @@ export default {
   computed: {
     selectedShop(){
         return this.$store.state.coffeeShops[0]
+        //will remove this from computed 
     },
     google: gmapApi,
     userPosition() {
