@@ -1,12 +1,12 @@
 <template>
   <section class="page">
-      <h2>Coffee Shops</h2>
-       <router-link v-bind:to="{ name: 'mapview' }" 
-              ><button class="viewmap">View on Map</button>
-            </router-link>
+      <p class="map-button"><span class="text-list-map">Coffee Shops</span> <router-link v-bind:to="{ name: 'mapview' }" 
+              ><button class="viewmap"><i class="fas fa-map-marked-alt"></i> Map</button>
+            </router-link></p> 
+      
   
       <div class="cards">
-        <div class="flex-card" v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId">
+        <div  v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId">
       <coffee-shop-card v-bind:coffeeShop="c" /> 
         </div>
        
@@ -79,6 +79,7 @@ export default {
     row-gap: 100rem;
     column-gap: 1rem;
     padding: 25px 10px 10px 0px;
+   
 }
 /*.page{
   margin-top: 100px;
@@ -90,7 +91,7 @@ export default {
   background-size: contain;
 }
 */
-h2{
+.map-button{
   margin-top: 100px;
   padding-left: 10px;
   color: white;
@@ -99,7 +100,19 @@ h2{
 .viewmap{
   margin-left: 15px;
   padding: 0 5px 0 5px;
-  background-color: rgb(218, 193, 171);;
+  border: none;
+  border-radius: 10px;
+
+}
+.text-list-map{
+  font-size: 30px;
+}
+.viewmap:hover{
+  background-color: #8fc1d4;
+  color: white;
+  transition: .5s;
+  border: none;
+ box-shadow: 7px 7px 15px rgb(36, 35, 35);
 }
 iframe{
   padding: 1% ;

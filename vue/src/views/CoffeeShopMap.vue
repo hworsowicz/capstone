@@ -1,7 +1,7 @@
 <template>
     <section class="mapview">
             <router-link  v-bind:to="{ name: 'coffeeShops' }" 
-              > <button class="linktolist"> Back to List </button>
+              > <button class="linktolist">List <i class="fas fa-list-ul"></i> </button>
             </router-link>
 <div class="map"> 
          <iframe src="https://my.atlistmaps.com/map/2c9cf803-873d-4c73-b722-d3ead35a7629?share=true" allow="geolocation 'self' https://my.atlistmaps.com"  width="100%" height= "100%" scrolling="no" allowfullscreen></iframe>
@@ -36,9 +36,18 @@ export default {
     background-size: cover;
 }
 .linktolist{
-     margin-left: 15px;
+    margin-left: 15px;
   padding: 0 5px 0 5px;
-  background-color: rgb(218, 193, 171);
+  margin-bottom: 7px;
+  border: none;
+  border-radius: 10px;
+}
+.linktolist:hover{
+      background-color: #8fc1d4;
+  color: white;
+  transition: .5s;
+  border: none;
+  box-shadow: 7px 7px 15px rgb(36, 35, 35);
 }
 
 </style>

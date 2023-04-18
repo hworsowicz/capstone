@@ -4,6 +4,9 @@
     <h1>Find your closest cup of coffee</h1>
    <google-map-search class="home-map-view"/>
    <!-- <map-details-page/> -->
+   <div class="articles">
+     Articles
+   </div>
   </div>
 </section>
 </template>
@@ -41,9 +44,19 @@ h1{
 .home-map-view{
   position: fixed;
   text-align: center;
-  padding-left: 10%;
-  
-  
+  padding-left: 24%;
 }
-
+@media screen and (max-width: 770px) {
+.home-map-view{
+  text-align: center;
+  padding-left: 5%;
+  width: 50px;
+}
+}
+.articles{
+    font-size: 60px;
+  color: white;
+  text-align: center;
+  padding-top: 100px;
+}
 </style>

@@ -112,7 +112,7 @@ header {
   transition: 0.6s;
   background-color: rgb(218, 193, 171);
   border-radius: 2px;
-  box-shadow: 2px 2px 2px rgb(90, 90, 90) ;
+    box-shadow: 7px 7px 15px rgb(36, 35, 35);
 }
 
 
