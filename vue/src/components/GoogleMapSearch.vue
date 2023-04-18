@@ -7,6 +7,8 @@
       map-type-id="terrain"
       style="width: 500px; height: 300px"
     >
+    <DirectionsRenderer
+      :directions="directions"  />
       <GmapMarker :position="userPosition"> </GmapMarker>
       <GmapMarker
         :key="index"
@@ -22,16 +24,34 @@
 <script>
 import CoffeeShopServices from "../services/CoffeeShopServices";
 import { gmapApi } from "vue2-google-maps";
+import DirectionsRenderer from '../services/DirectionsRenderer';
 
 export default {
+  components: {DirectionsRenderer},
   data() {
     return {
       place: null,
+      directions: null,
     };
   },
   methods: {
-    setPlace(place) {
+    async setPlace(place) {
       this.place = place;
+      this.directions = await this.getDirections();
+    },
+    async getDirections(){
+        const directionsService = new this.google.maps.DirectionsService();
+        const origin = new this.google.maps.LatLng(
+          this.place.geometry.location.lat(),
+          this.place.geometry.location.lng()
+        )
+        const route = await directionsService.route({
+          destination:  new this.google.maps.LatLng(this.selectedShop.latitude, this.selectedShop.longitude),
+          origin: origin,
+          travelMode: 'DRIVING'
+        });
+        console.log(route);
+        return route;
     },
 
     getCoffeeShops() {
@@ -48,6 +68,9 @@ export default {
     this.getCoffeeShops();
   },
   computed: {
+    selectedShop(){
+        return this.$store.state.coffeeShops[0]
+    },
     google: gmapApi,
     userPosition() {
       return (
