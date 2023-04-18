@@ -1,15 +1,20 @@
 <template>
+<section>
   <div class="home">
     <h1>Find your closest cup of coffee</h1>
-    
-    <google-map-search/>
-   
+   <google-map-search class="home-map-view"/>
+   <!-- <map-details-page/> -->
   </div>
+</section>
 </template>
 <script>
+
 import GoogleMapSearch from '../components/GoogleMapSearch.vue';
+//import MapDetailsPage from '../components/MapDetailsPage.vue';
+
+
 export default {
-  components: { GoogleMapSearch },
+  components: { GoogleMapSearch}, 
   name: "home",
 };
 </script>
@@ -30,6 +35,15 @@ h1{
   font-size: 60px;
   color: white;
   text-align: center;
-  padding-top: 300px;
+  padding-top: 100px;
+  
 }
+.home-map-view{
+  position: fixed;
+  text-align: center;
+  padding-left: 10%;
+  
+  
+}
+
 </style>

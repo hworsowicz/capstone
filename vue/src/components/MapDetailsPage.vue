@@ -1,26 +1,15 @@
 <template>
   <div>
-        <p class="homeSearchAddress" v-if="selectedShop != null">
-      Here is the closest shop near you: <router-link
-        class="list-coffee"
-        v-bind:to="{
-          name: 'details',
-          params: { coffeeShopId: findShop.shopId },
-        }"
-      >{{ findShop.shopName }}!</router-link>
-      <br> Want something different? <router-link class="list-coffee" v-bind:to="{ name: 'coffeeShops' }">See all coffee shops</router-link>
-    </p>
-  
     <gmap-place-input  class="map-search"
       @place_changed="setPlace"
       placeholder="Enter your location"
     />
-    
-    <GmapMap 
+  
+    <GmapMap class="map-home"
       :center="{ lat: 39.97745, lng: -83.038221 }"
       :zoom="12"
       map-type-id="terrain"
-      style="width: 1000px; height: 650px"
+      style="width: 500px; height: 300px"
     >
       <DirectionsRenderer :directions="directions" />
       <GmapMarker :position="userPosition" />
@@ -46,7 +35,6 @@
     </GmapMap>
    
   </div>
-
 </template>
 <script>
 import CoffeeShopServices from "../services/CoffeeShopServices";
@@ -126,45 +114,18 @@ export default {
         );
       });
     },
-    getCoffeeShops() {
-      CoffeeShopServices.getAllCoffeeShops()
-        .then((response) => {
-          this.$store.commit("SET_COFFEE_SHOPS", response.data);
-        })
-        .catch((err) => console.error("Sorry could not load shops", err));
+    getSingleCoffeeShop() {
+      CoffeeShopServices.getSingleCoffeeShop(this.$route.params.coffeeShopId)
+      .then((response) => {
+        this.coffeeShop = response.data;
+      })
+      .catch((error) => console.error("Could not load Coffee Shop", error));
     },
   },
   created() {
-    this.getCoffeeShops();
+    this.getSingleCoffeeShop();
   },
   computed: {
-    findShop() {
-      console.log(this.$store.state.coffeeShops[5].latitude);
-      console.log(this.selectedShop.position.lat());
-      let foundShop = this.$store.state.coffeeShops.find(
-        (s) => s.latitude === this.selectedShop.position.lat()
-      );
-      console.log(foundShop);
-      return foundShop;
-    },
-    closestShop() {
-      if (!this.place) {
-        return null;
-      }
-      const distances = this.markers.map((marker) => {
-        const lat = marker.position.lat();
-        const lng = marker.position.lng();
-        const distance = this.distance(
-          lat,
-          lng,
-          this.place.geometry.location.lat(),
-          this.place.geometry.location.lng()
-        );
-        return { marker, distance };
-      });
-      distances.sort((a, b) => a.distance - b.distance);
-      return distances[0].marker;
-    },
     google: gmapApi,
     userPosition() {
       return (
@@ -177,10 +138,7 @@ export default {
       );
     },
     markers() {
-      if (!this.google) {
-        return [];
-      }
-
+     
       return this.$store.state.coffeeShops.map((c) => {
         const obj = {
           position: new this.google.maps.LatLng(c.latitude, c.longitude),
@@ -195,6 +153,7 @@ export default {
 </script>
 <style>
 .homeSearchAddress {
+  padding-top: 100px;
   color: white;
   font-size: 30px;
 }
@@ -206,7 +165,11 @@ export default {
 }
 .list-coffee:hover{
   color: rgb(151, 196, 223);
-}
+}/*
+.map-home{
+  display: inline-block;
+  
+}*/
 /*
 .map-search{
   
