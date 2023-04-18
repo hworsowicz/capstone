@@ -4,16 +4,13 @@
     <google-map-search/>
   </div>
 </template>
-
 <script>
 import GoogleMapSearch from '../components/GoogleMapSearch.vue';
 export default {
   components: { GoogleMapSearch },
   name: "home",
-    
 };
 </script>
-
 <style scoped>
 .home {
   background-image: url('../Images/cafe2.jpg');
@@ -26,7 +23,6 @@ export default {
       background-size: cover;
       /*background-size: 100% 100%;
       background-size: contain;*/
-     
 }
 h1{
   font-size: 60px;
