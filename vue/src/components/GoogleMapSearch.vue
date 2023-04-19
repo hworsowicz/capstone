@@ -10,13 +10,11 @@
       >{{ findShop.shopName }}!</router-link>
       <br> Want something different? <router-link class="list-coffee" v-bind:to="{ name: 'coffeeShops' }">See all coffee shops</router-link>
     </p>
-  
     <gmap-place-input  class="map-search"
       @place_changed="setPlace"
       placeholder="Enter your location"
     />
-    
-    <GmapMap 
+    <GmapMap
       :center="{ lat: 39.97745, lng: -83.038221 }"
       :zoom="12"
       map-type-id="terrain"
@@ -44,9 +42,7 @@
         @click="center = m.position"
       />
     </GmapMap>
-   
   </div>
-
 </template>
 <script>
 import CoffeeShopServices from "../services/CoffeeShopServices";
@@ -79,7 +75,6 @@ export default {
       distances.sort((a, b) => a.distance - b.distance);
       this.closestShop = distances[0].marker;
       this.selectedShop = this.closestShop;
-
       this.displayDirections(); // call the displayDirections() method here
     },
     async displayDirections() {
@@ -180,7 +175,6 @@ export default {
       if (!this.google) {
         return [];
       }
-
       return this.$store.state.coffeeShops.map((c) => {
         const obj = {
           position: new this.google.maps.LatLng(c.latitude, c.longitude),
@@ -201,18 +195,14 @@ export default {
 .list-coffee{
   color: #fff;
   position: relative;
- 
-  
 }
 .list-coffee:hover{
   color: rgb(151, 196, 223);
 }
 /*
 .map-search{
-  
     width: 100%;
-    
     border-radius: 30px 0 0 30px;
-     background-color: #ffffee
+     background-color: #FFFFEE
 }*/
 </style>

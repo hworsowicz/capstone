@@ -24,7 +24,18 @@
         </div>
         <div class="features-img">
           
-          <img :src="require('../Images/' + coffeeShop.mapPicture)" />
+       <GmapMap
+      :center="{ lat: coffeeShop.latitude, lng: coffeeShop.longitude }"
+      :zoom="16"
+      map-type-id="terrain"
+      style="width: 700px; height: 400px"
+    >
+      <GmapMarker 
+      :position="{ lat: coffeeShop.latitude, lng: coffeeShop.longitude }"
+       :clickable="true"
+        :draggable="true" />
+       </GmapMap>
+   
         </div>
       </div>
 
@@ -66,6 +77,7 @@
 import 'animate.css';
 import CoffeeShopServices from "../services/CoffeeShopServices.js";
 import CoffeeShopCard from "../components/CoffeeShopCard.vue";
+import { gmapApi } from "vue2-google-maps";
 
 
 export default {
@@ -73,15 +85,35 @@ export default {
   data() {
     return {
       coffeeShop: {},
+      
     };
   },
   created() {
     CoffeeShopServices.getSingleCoffeeShop(this.$route.params.coffeeShopId)
       .then((response) => {
         this.coffeeShop = response.data;
+         console.log(this.coffeeShop)
       })
       .catch((error) => console.error("Could not load Coffee Shop", error));
   },
+/*  methods:{
+ markers() {
+      if (!this.google) {
+        return [];
+      }
+      return CoffeeShopServices.getSingleCoffeeShop(this.$route.params.coffeeShopId).map((c) => {
+        const obj = {
+          position: new this.google.maps.LatLng(c.latitude, c.longitude),
+        };
+        // console.log(obj)
+        // console.log(obj.position)
+        return obj;
+      })
+ }
+  },*/
+    computed:{
+      google: gmapApi,
+    }
 };
 </script>
 
