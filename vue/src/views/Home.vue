@@ -1,20 +1,43 @@
 <template>
 <section> 
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="../Images/newstack.jpg" alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../Images/newrelax.jpg" alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="../Images/sliderthree.jpg" alt="Third slide">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+<h2 class="banner-text-carousel">WELCOME TO JOLT</h2>
   <div class="home">
     <h1>Find your closest cup of coffee</h1>
    <google-map-search class="home-map-view"/>
    <!-- <map-details-page/> -->
 
   </div>
-  <router-link v-bind:to="{ name: 'aboutus' }" 
-              ><button>Meet the team</button>
-            </router-link>
+  <footer>
+  
+</footer>
 </section>
+
 </template>
 <script>
 
 import GoogleMapSearch from '../components/GoogleMapSearch.vue';
-//import MapDetailsPage from '../components/MapDetailsPage.vue';
+
 
 
 
@@ -26,28 +49,28 @@ export default {
 };
 </script>
 <style scoped>
+
 .home {
+  background-image: url("../Images/annie-spratt-6a3nqQ1YwBw-unsplash.jpg");
   min-width: 100%;
   height: 100vh;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
- 
-      background-size: cover;
-      background-size: 100% 100%;
-      background-size: contain;
+  background-size: cover;  
 
   
 }
 h1{
   font-size: 60px;
   color: white;
-  font-size: 30px;
+  text-align: center;
+  padding-top: 100px;
 }
 .home-map-view{
- 
   text-align: center;
-  padding-left: 15%;
+  padding-left: 9%;
+ 
 }
 .list-coffee{
   color: #fff;
@@ -55,6 +78,29 @@ h1{
 }
 .list-coffee:hover{
   color: rgb(151, 196, 223);
+}
+.carousel-item{
+height: 100vh;
+
+}
+.carousel-item img{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom right rgba(151, 131, 124, 0));
+}
+.banner-text-carousel{
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 80px;
+    text-shadow: 3px 3px black;
+    
 }
 
  
