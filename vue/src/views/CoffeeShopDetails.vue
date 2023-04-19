@@ -141,6 +141,7 @@ export default {
   color: #fff;
   padding-top: 250px;
   font-size: 110px;
+  text-shadow: 2px 2px black;
   
 }
 #feature{

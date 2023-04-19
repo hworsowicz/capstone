@@ -1,8 +1,11 @@
 <template>
   <section class="page">
+    <div class="list-banner">
+
       <p class="map-button"><span class="text-list-map">Coffee Shops</span> <router-link v-bind:to="{ name: 'mapview' }" 
               ><button class="viewmap"><i class="fas fa-map-marked-alt"></i> Map</button>
             </router-link></p> 
+    </div>
       
   
       <div class="cards">
@@ -73,12 +76,18 @@ export default {
 </script>
 
 <style>
+/* .list-banner{
+  background-color:rgb(218, 193, 171);
+  margin: 0 40% 0 40%;
+  border-radius: 20px;
+  box-shadow: 2px 2px black;
+} */
 .cards {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    row-gap: 100rem;
+    row-gap: 10px;
     column-gap: 1rem;
-    padding: 25px 10px 10px 0px;
+    padding: 15px 10px 30px 0px;
    
 }
 /*.page{
@@ -92,9 +101,12 @@ export default {
 }
 */
 .map-button{
+  text-align: center;
   margin-top: 100px;
-  padding-left: 10px;
+  padding-left: 20px;
   color: white;
+ 
+  
 }
 
 .viewmap{
@@ -102,17 +114,18 @@ export default {
   padding: 0 5px 0 5px;
   border: none;
   border-radius: 10px;
-
+   box-shadow: 2px 2px 2px black;
 }
 .text-list-map{
   font-size: 30px;
+  text-shadow: 2px 2px black
 }
 .viewmap:hover{
   background-color: #8fc1d4;
   color: white;
   transition: .5s;
   border: none;
- box-shadow: 7px 7px 15px rgb(36, 35, 35);
+ box-shadow: 2px 2px 2px black;
 }
 iframe{
   padding: 1% ;
