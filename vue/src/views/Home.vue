@@ -6,7 +6,6 @@
    <!-- <map-details-page/> -->
 
   </div>
-</section>
 </template>
 <script>
 
@@ -37,25 +36,15 @@ export default {
 h1{
   font-size: 60px;
   color: white;
-  text-align: center;
-  padding-top: 100px;
-  
+  font-size: 30px;
 }
-.home-map-view{
-  position: fixed;
-  text-align: center;
-  padding-left: 24%;
+.list-coffee{
+  color: #fff;
+  position: relative;
 }
-@media screen and (max-width: 770px) {
-.home-map-view{
-  text-align: center;
-  padding-left: 5%;
-  width: 50px;
+.list-coffee:hover{
+  color: rgb(151, 196, 223);
 }
-}
-
-
-
 
  
 </style>
