@@ -6,6 +6,7 @@
    <!-- <map-details-page/> -->
 
   </div>
+  </section>
 </template>
 <script>
 
