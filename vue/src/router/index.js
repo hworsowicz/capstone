@@ -9,6 +9,7 @@ import CoffeeShopList from "../components/CoffeeShopList.vue";
 import CoffeeShopDetails from "../views/CoffeeShopDetails.vue";
 import Favorites from "../views/Favorites.vue";
 import CoffeeShopMap from "../views/CoffeeShopMap";
+import AboutUs from "../views/AboutUs.vue";
 
 Vue.use(Router);
 
@@ -25,6 +26,12 @@ const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
+    {
+        path: "/about",
+        name: "aboutus",
+        component: AboutUs
+
+    },
     {
       path:"coffee-shops/map-view",
       name: "mapview",
