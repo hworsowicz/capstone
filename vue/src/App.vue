@@ -94,7 +94,7 @@
     
 }
 body{
-  background-image: url('Images/nathan-dumlao-J2gEgTPM_OA-unsplash.jpg');
+  background-image: url('Images/beans3.jpg');
   min-height: 100%;
   background-repeat: no-repeat;
   background-position: center center;

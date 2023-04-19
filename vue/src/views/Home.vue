@@ -1,50 +1,99 @@
 <template>
 <section> 
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="../Images/newstack.jpg" alt="First slide">
+      <img src="../Images/newstack.jpg" class="d-block w-100" alt="...">
+      <div class="absolute-div">
+                        <div class="carousel-caption">
+                             <h3>Welcome to Jolt</h3>
+                        </div>
+                    </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="../Images/newrelax.jpg" alt="Second slide">
+      <img src="../Images/newrelax.jpg" class="d-block w-100" alt="...">
+        <div class="absolute-div">
+                        <div class="carousel-caption">
+                             <h3>Welcome to Jolt</h3>
+                        </div>
+                    </div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="../Images/sliderthree.jpg" alt="Third slide">
+      <img  src="../Images/sliderthree.jpg" class="d-block w-100" alt="...">
+        <div class="absolute-div">
+                        <div class="carousel-caption">
+                            <h3>Welcome to Jolt</h3>
+                        </div>
+                    </div>
     </div>
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
-<h2 class="banner-text-carousel">WELCOME TO JOLT</h2>
+
+
   <div class="home">
     <h1>Find your closest cup of coffee</h1>
    <google-map-search class="home-map-view"/>
    <!-- <map-details-page/> -->
-
   </div>
   <footer>
   this is the footer
 </footer>
 </section>
 
+
 </template>
 <script>
 
 import GoogleMapSearch from '../components/GoogleMapSearch.vue';
 
+
 export default {
   components: { GoogleMapSearch}, 
   name: "home",
+  
 };
 </script>
-<style scoped>
 
+<style scoped>
+.carousel-caption {
+     width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 100px;
+    text-shadow: 3px 3px black;
+}
+
+.absolute-div {
+    position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+}
+
+.carousel-caption h3 {
+  width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 100px;
+    text-shadow: 3px 3px black;
+}
 .home {
   
   min-width: 100%;
@@ -77,15 +126,17 @@ h1{
 }
 .carousel-item{
 height: 100vh;
-
 }
+
 .carousel-item img{
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   background: linear-gradient(to bottom right rgba(151, 131, 124, 0));
+  
 }
+
 .banner-text-carousel{
     width: 90%;
     color: white;
@@ -94,7 +145,7 @@ height: 100vh;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    font-size: 80px;
+    font-size: 100px;
     text-shadow: 3px 3px black;
     
 }
