@@ -139,7 +139,7 @@ export default {
 .banner-text {
   text-align: center;
   color: #fff;
-  padding-top: 250px;
+  padding-top: 350px;
   font-size: 110px;
   text-shadow: 2px 2px black;
   

@@ -29,7 +29,7 @@
 
   </div>
   <footer>
-  
+  this is the footer
 </footer>
 </section>
 
@@ -37,11 +37,6 @@
 <script>
 
 import GoogleMapSearch from '../components/GoogleMapSearch.vue';
-
-
-
-
-
 
 export default {
   components: { GoogleMapSearch}, 
@@ -51,7 +46,7 @@ export default {
 <style scoped>
 
 .home {
-  background-image: url("../Images/annie-spratt-6a3nqQ1YwBw-unsplash.jpg");
+  
   min-width: 100%;
   height: 100vh;
   background-repeat: no-repeat;
@@ -66,6 +61,7 @@ h1{
   color: white;
   text-align: center;
   padding-top: 100px;
+  
 }
 .home-map-view{
   text-align: center;

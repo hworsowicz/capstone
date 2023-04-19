@@ -100,6 +100,7 @@ export default {
   background-size: contain;
 }
 */
+
 .map-button{
   text-align: center;
   margin-top: 100px;
