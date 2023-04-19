@@ -91,6 +91,7 @@ export default {
   background-size: contain;
 }
 */
+
 .map-button{
   margin-top: 100px;
   padding-left: 10px;

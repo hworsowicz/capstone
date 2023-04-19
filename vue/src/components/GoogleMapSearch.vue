@@ -191,6 +191,7 @@ export default {
 .homeSearchAddress {
   color: white;
   font-size: 30px;
+  padding-right: 155px;
   
 }
 .list-coffee{
@@ -204,6 +205,8 @@ export default {
 .map-search{
     width: 100%;
     border-radius: 30px 0 0 30px;
+    padding-right: 150px;
+    padding-top: 15px;
     
 }
 .map-home-view{
