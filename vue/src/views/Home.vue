@@ -1,5 +1,5 @@
 <template>
-<section>
+<section> 
   <div class="home">
     <h1>Find your closest cup of coffee</h1>
    <google-map-search class="home-map-view"/>
@@ -8,12 +8,18 @@
      Articles
    </div>
   </div>
+  <router-link v-bind:to="{ name: 'aboutus' }" 
+              ><button>Meet the team</button>
+            </router-link>
 </section>
 </template>
 <script>
 
 import GoogleMapSearch from '../components/GoogleMapSearch.vue';
 //import MapDetailsPage from '../components/MapDetailsPage.vue';
+
+
+
 
 
 export default {
@@ -23,7 +29,6 @@ export default {
 </script>
 <style scoped>
 .home {
-  background-image: url('../Images/cafe2.jpg');
   min-width: 100%;
   height: 100vh;
   background-repeat: no-repeat;
@@ -42,9 +47,9 @@ h1{
   
 }
 .home-map-view{
-  position: fixed;
+ 
   text-align: center;
-  padding-left: 24%;
+  padding-left: 15%;
 }
 @media screen and (max-width: 770px) {
 .home-map-view{
