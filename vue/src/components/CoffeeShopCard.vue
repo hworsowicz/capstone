@@ -111,8 +111,6 @@ export default {
   box-shadow: 7px 7px 15px rgb(48, 47, 47);
   transition: 0.2s ease-in-out;
   margin-left: 30px;
- 
-  animation-duration: 1.7s;
   
 
 }

@@ -57,6 +57,12 @@
               >&nbsp;&nbsp;Coffee Shops<span class="blue-filler"></span>
             </router-link>
           </li>
+          <li>
+          <router-link v-bind:to="{ name: 'aboutus' }" 
+               class="nav-item"
+              >&nbsp;&nbsp;Meet the team<span class="blue-filler"></span>
+            </router-link>
+          </li>
           
         </ul>
       </nav>

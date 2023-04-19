@@ -14,11 +14,11 @@
       @place_changed="setPlace"
       placeholder="Enter your location"
     />
-    <GmapMap
-      :center="{ lat: 39.97745, lng: -83.038221 }"
-      :zoom="12"
+    <GmapMap class="map-home-view" 
+      :center="{ lat: 39.99594034364347, lng: -83.01712965671832 }"
+      :zoom="12.5"
       map-type-id="terrain"
-      style="width: 1000px; height: 650px"
+      style="width: 1500px; height: 700px"
     >
       <DirectionsRenderer :directions="directions" />
       <GmapMarker :position="userPosition" />
@@ -191,6 +191,7 @@ export default {
 .homeSearchAddress {
   color: white;
   font-size: 30px;
+  
 }
 .list-coffee{
   color: #fff;
@@ -199,10 +200,14 @@ export default {
 .list-coffee:hover{
   color: rgb(151, 196, 223);
 }
-/*
+
 .map-search{
     width: 100%;
     border-radius: 30px 0 0 30px;
-     background-color: #FFFFEE
-}*/
+    
+}
+.map-home-view{
+   margin: 30px;
+   padding-left: 30px;
+}
 </style>
