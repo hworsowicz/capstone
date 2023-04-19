@@ -2,12 +2,17 @@
   <div class="home">
     <h1>Coming Soon!</h1>
     <google-map-search/>
+
+    
+    <carousel />
   </div>
 </template>
 <script>
+
+import Carousel from '../components/carousel.vue';
 import GoogleMapSearch from '../components/GoogleMapSearch.vue';
 export default {
-  components: { GoogleMapSearch },
+  components: { GoogleMapSearch, Carousel },
   name: "home",
 };
 </script>
@@ -21,8 +26,10 @@ export default {
   background-attachment: fixed;
  
       background-size: cover;
-      /*background-size: 100% 100%;
-      background-size: contain;*/
+      background-size: 100% 100%;
+      background-size: contain;
+
+  
 }
 h1{
   font-size: 60px;
@@ -30,4 +37,8 @@ h1{
   text-align: center;
   padding-top: 300px;
 }
+
+
+
+ 
 </style>
