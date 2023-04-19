@@ -111,6 +111,11 @@ export default {
   box-shadow: 7px 7px 15px rgb(48, 47, 47);
   transition: 0.2s ease-in-out;
   margin-left: 30px;
+<<<<<<< HEAD
+ margin-bottom: 20px;
+  animation-duration: 1.7s;
+=======
+>>>>>>> ef1ec2c43b461f1cd9ee9314e4c559653a20a607
   
 
 }
@@ -175,7 +180,8 @@ export default {
 }
 .read-more{
   text-decoration: none;
-  
+  text-align: center;
+  padding-left: 30px;
 }
 
 .heart-icon {
@@ -210,7 +216,7 @@ export default {
 }
 
 .card:hover {
-  cursor: pointer;
+  
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
 
   transform: scale(1.1);

@@ -154,6 +154,7 @@ header nav ul li {
 .nav-item:hover{
   text-decoration: none;
   color: white;
+  text-shadow: 1px 1px black;
 }
 
 .nav li {
@@ -180,8 +181,8 @@ header nav ul li {
   width: 100%;
   height: 100%;
   border: solid;
-  border-color: #8FC1D4;
-  border-width: 3px;
+  border-color: black;
+  border-width: 0 2px 2px 0;
   background: #8FC1D4;
   border-radius: 30px;
   z-index: -1;
