@@ -2,7 +2,7 @@
     <section class="mapview">
         <div class="container">
             <router-link  v-bind:to="{ name: 'coffeeShops' }" 
-              > <button class="linktolist"> Back to List </button>
+              > <button class="linktolist">List <i class="fas fa-list-ul"></i> </button>
             </router-link>
         </div>
 <div class="map"> 
@@ -38,9 +38,18 @@ export default {
     background-size: cover;
 }
 .linktolist{
-     margin-left: 15px;
+    margin-left: 15px;
   padding: 0 5px 0 5px;
-  background-color: rgb(218, 193, 171);
+  margin-bottom: 7px;
+  border: none;
+  border-radius: 10px;
+}
+.linktolist:hover{
+      background-color: #8fc1d4;
+  color: white;
+  transition: .5s;
+  border: none;
+  box-shadow: 7px 7px 15px rgb(36, 35, 35);
 }
 
 

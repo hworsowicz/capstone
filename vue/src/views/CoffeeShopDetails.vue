@@ -23,6 +23,7 @@
           </div>
         </div>
         <div class="features-img">
+          
           <img :src="require('../Images/' + coffeeShop.mapPicture)" />
         </div>
       </div>
@@ -65,6 +66,7 @@
 import 'animate.css';
 import CoffeeShopServices from "../services/CoffeeShopServices.js";
 import CoffeeShopCard from "../components/CoffeeShopCard.vue";
+
 
 export default {
   components: { CoffeeShopCard },
