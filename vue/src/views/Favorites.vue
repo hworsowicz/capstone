@@ -1,5 +1,5 @@
 <template>
-  <section class="page">
+  <section v-scrollanimation class="page">
     <h1 class="hasNoFavs" v-if="favoriteShops.length === 0">Looks like you haven't favorited any shops, <router-link v-bind:to="{ name: 'coffeeShops' }" class="link"><span>let's check some out!</span>
             </router-link> </h1>
     <h1 class="hasFavs" v-if="favoriteShops.length >= 1">{{$store.state.user.username}}, Great Choices!</h1>
