@@ -56,7 +56,7 @@ check directives folder in src for the logic -->
     </div>
     <div class="card-details"><span><i class="fa fa-calendar"></i>Mar 20</span><span><i class="fa fa-heart"></i>300</span></div>
     <div class="card-text"><p>The Coffee Brew Box! This very limited edition box will feature samples from 12 coffee roasters plus some extra goodies to enhance your at home coffee.</p></div>
-    <div class="read-more"><a href="https://columbusunderground.com/the-coffee-festival-brew-box-is-back-dh1/">Read More</a></div>
+    <div class="read-more"><a target="_new" href="https://columbusunderground.com/the-coffee-festival-brew-box-is-back-dh1/">Read More</a></div>
   </div>
   <div  class="blog-card">
     <div class="card-img"><img src="../Images/sliderfive.jpg">
@@ -66,7 +66,7 @@ check directives folder in src for the logic -->
     <div class="card-text"><p>This trail will be an easy task for any coffee lover! There are 25+ stops of this caffeine-filled trail.
 
 After just four stops, you earn a free Columbus coffee experience t-shirt.</p></div>
-    <div class="read-more"><a href="https://www.columbusonthecheap.com/columbus-coffee-trail/">Read More</a></div>
+    <div class="read-more"><a target="_new" href="https://www.columbusonthecheap.com/columbus-coffee-trail/">Read More</a></div>
   </div>
    <div class="blog-card">
     <div class="card-img"><img src="../Images/slidertwo.jpg">
@@ -75,7 +75,7 @@ After just four stops, you earn a free Columbus coffee experience t-shirt.</p></
     <div class="card-details"><span><i class="fa fa-calendar"></i>MAR 14</span><span><i class="fa fa-heart"></i>102</span></div>
     <div class="card-text">A cooperative spirit among entrepreneurs has led to a buzzing coffee scene in Columbus, Ohio, that’s steeped in tradition and fueled by creativity<p>
 </p></div>
-    <div class="read-more"><a href="https://www.usatoday.com/story/travel/experience/food-and-wine/2018/03/14/columbus-ohio-craft-coffee/417588002/">Read More</a></div>
+    <div class="read-more"><a target="_new" href="https://www.usatoday.com/story/travel/experience/food-and-wine/2018/03/14/columbus-ohio-craft-coffee/417588002/">Read More</a></div>
   </div>
 </div>
      <footer class="footer">
