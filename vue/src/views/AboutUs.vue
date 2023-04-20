@@ -41,6 +41,10 @@
     </div>
   </div>
 </div>
+<div class="about-our-app">
+<h2 >WRITE STUFF HERE</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime, vel. Modi fugiat inventore similique possimus aspernatur optio quisquam, eius enim doloribus vero maiores perspiciatis beatae deleniti doloremque necessitatibus iure dolore. Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel molestiae accusantium culpa dicta deleniti odit porro tempore omnis ut itaque molestias tempora, et quas assumenda soluta voluptatum! Ipsa, omnis dicta. Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias suscipit, quia modi voluptatum expedita doloremque reprehenderit illo. Minus magni optio repellendus fugiat laboriosam excepturi, quia asperiores in vitae architecto perspiciatis? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloribus quis soluta vero earum, minus voluptas est exercitationem ullam enim sit tempore ab possimus commodi explicabo qui accusantium. Recusandae, ullam! Eos? Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur dicta velit, voluptate, perferendis voluptatem molestiae repellendus autem laborum consectetur culpa facere dolorum voluptas similique ad expedita libero sequi doloribus excepturi.</p>
+</div>
 </section>
 </template>
 
@@ -54,6 +58,11 @@ export default {
 
 *, *:before, *:after {
   box-sizing: inherit;
+}
+.about-our-app{
+  color: white;
+
+  
 }
 .row{
   display: inline-block;

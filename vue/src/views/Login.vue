@@ -104,7 +104,7 @@ export default {
 }
 .container{
   max-width: 440px;
-  padding: 0 20px;
+  padding: 80px 20px;
   margin: 170px auto;
 }
 .wrapper{

@@ -71,6 +71,8 @@ export default {
   padding-top: 100px;
   color: #fff;
   text-transform: capitalize; /* this will capitalize the first letter*/
+  text-align: center;
+  text-shadow: 2px 2px black;
 }
 
 
