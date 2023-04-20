@@ -13,6 +13,7 @@
     <gmap-place-input  class="map-search"
       @place_changed="setPlace"
       placeholder="Enter your location"
+      
     />
     <GmapMap class="map-home-view" 
       :center="{ lat: 39.99594034364347, lng: -83.01712965671832 }"
@@ -208,6 +209,7 @@ export default {
    display: grid;
 place-items: center;
 margin: 20px;
+
     
 }
 .map-home-view{
