@@ -78,7 +78,10 @@ After just four stops, you earn a free Columbus coffee experience t-shirt.</p></
     <div class="read-more"><a href="https://www.usatoday.com/story/travel/experience/food-and-wine/2018/03/14/columbus-ohio-craft-coffee/417588002/">Read More</a></div>
   </div>
 </div>
-
+     <footer class="footer">
+        <h4>Jolt&reg;</h4>
+        <p>Hi! Welcome to Jolt where it's 5am somewhere</p>
+  </footer>
 </section>
 
 
@@ -96,7 +99,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 1px;
+    font-weight: 300;
+    color: #fff;
+}
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    color: #fff;
+    background: #000;
+    opacity: 0.8;
+    content: '';
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    margin-top: 10px;
+}
 h2{
   font-size:35px;
    font-family: 'Quicksand', sans-serif; 
