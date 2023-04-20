@@ -1,5 +1,5 @@
 <template>
-<section class="container">
+<section v-scrollanimation class="container">
 <h2>About Us</h2> 
 <br>
 <div class="row">
@@ -61,7 +61,7 @@ export default {
 }
 .about-our-app{
   color: white;
-
+  text-shadow: 2px 2px black;
   
 }
 .row{

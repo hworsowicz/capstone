@@ -2,7 +2,7 @@
   <section class="page">
     <div class="list-banner">
 
-      <p class="map-button"><span class="text-list-map">Coffee Shops</span> <router-link v-bind:to="{ name: 'mapview' }" 
+      <p v-scrollanimation class="map-button"><span class="text-list-map">Coffee Shops</span> <router-link v-bind:to="{ name: 'mapview' }" 
               ><button class="viewmap"><i class="fas fa-map-marked-alt"></i> Map</button>
             </router-link></p> 
     </div>
@@ -135,7 +135,7 @@ iframe{
 /* Scroll animation below. Check directives/scrollanimation for js */
 .before-enter{
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(-100px);
   transition: all 2s ease-out;
 }
 

@@ -190,16 +190,16 @@ export default {
 <style>
 
 .homeSearchAddress {
-  color: black;
+  color: white;
   font-size: 30px;
   
 }
 .list-coffee{
-  color: black;
+  color: white;
   position: relative;
 }
 .list-coffee:hover{
-  color: rgb(31, 78, 107);
+  color: #8fc1d4;
   text-decoration: none;
 }
 
