@@ -13,6 +13,7 @@
       <!--<div class="map">
         <img  src="../Images/Columbus-Map.jpg" alt="Columbus Map" />
       </div>-->
+      
   </section>
 </template>
 

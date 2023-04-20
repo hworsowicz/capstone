@@ -1,4 +1,5 @@
 <template>
+<div>
 <section v-scrollanimation class="container">
 <h2>About Us</h2> 
 <br>
@@ -49,7 +50,14 @@
 <h2 >About Jolt</h2>
 <p>Our team completed this capstone as the final requirement for our coding Bootcamp, Tech Elevator.  Jolt was designed to showcase our skills in software development.  Jolt is a coffee shop finder which we created using C# ,  ASP .NET, SQL Server, Vue.js, and CSS. While working on this page, we utilized the principles of Agile methodology, which enabled us to deliver the project on time and with high-quality results. Each of our four sprints were completed in 2-3 days. We are proud of the outcome of Jolt, as well as the teamwork and dedication that went into the process of creating it. We hope you enjoy the site and look forward to connecting with you on LinkedIn! </p>
 </div>
+
+    
 </section>
+<footer class="footer">
+        <h4>Jolt&reg;</h4>
+        <p>Hi! Welcome to Jolt where it's 5am somewhere</p>
+  </footer>
+</div>
 </template>
 
 <script>
@@ -63,9 +71,31 @@ export default {
 *, *:before, *:after {
   box-sizing: inherit;
 }
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 1px;
+    font-weight: 300;
+    color: #fff;
+}
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    color: #fff;
+    background: #000;
+    opacity: 0.8;
+    content: '';
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    margin-top: 10px;
+}
 .about-our-app{
   color: white;
   text-shadow: 2px 2px black;
+  padding-bottom: 15px;
   
 }
 .row{

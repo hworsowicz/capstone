@@ -46,6 +46,10 @@
   </div>
     </div>
     </div>
+    <footer class="footer">
+        <h4>Jolt&reg;</h4>
+        <p>Hi! Welcome to Jolt where it's 5am somewhere</p>
+  </footer>
     </section>
 </template>
 
