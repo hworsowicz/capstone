@@ -9,7 +9,7 @@
       
   
       <div class="cards">
-        <div  v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId">
+        <div v-scrollanimation v-for="c in this.$store.state.coffeeShops" v-bind:key="c.coffeeShopId">
       <coffee-shop-card v-bind:coffeeShop="c" /> 
         </div>
        
@@ -132,6 +132,18 @@ iframe{
   padding: 1% ;
   border-radius: 20px;
 }
+/* Scroll animation below. Check directives/scrollanimation for js */
+.before-enter{
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 2s ease-out;
+}
+
+.enter{
+  opacity: 1;
+  transform: translateX(0px)
+}
+
 
 
 

@@ -1,12 +1,12 @@
 <template>
   <div class="bodyDetails">
     <section id="banner">
-      <h1 class="banner-text">{{ coffeeShop.shopName }}</h1>
+      <h1 v-scrollanimation class="banner-text">{{ coffeeShop.shopName }}</h1>
     </section>
     <section id="feature">
       <div class="title-text">
-        <h1>About {{ coffeeShop.shopName }}</h1>
-        <p>
+        <h1 v-scrollanimation>About {{ coffeeShop.shopName }}</h1>
+        <p v-scrollanimation>
           {{ coffeeShop.hoursWeekdays }}
           <br />
           {{ coffeeShop.shopLocation }}
@@ -15,16 +15,16 @@
       </div>
       <div class="feature-box">
         <div class="features">
-          <h1 class="animate__fadeInLeft">Our Story:</h1>
-          <div class="features-desc">
-            <div class="feature-text">
-              <p class="animate__fadeInLeft">{{ coffeeShop.about }}</p>
+          <h1 v-scrollanimation class="animate__fadeInLeft">Our Story:</h1>
+          <div v-scrollanimation class="features-desc">
+            <div v-scrollanimation class="feature-text">
+              <p v-scrollanimation class="animate__fadeInLeft">{{ coffeeShop.about }}</p>
             </div>
           </div>
         </div>
-        <div class="features-img">
+        <div v-scrollanimation class="features-img">
           
-       <GmapMap
+       <GmapMap v-scrollanimation
       :center="{ lat: coffeeShop.latitude, lng: coffeeShop.longitude }"
       :zoom="16"
       map-type-id="terrain"
@@ -45,7 +45,7 @@
         <h1></h1>
         <br>
       </div>
-      <div class="photo-box">
+      <div v-scrollanimation class="photo-box">
             <div class="single-photo">
                <img :src="require('../Images/' + coffeeShop.gallery1)" />
             </div>
@@ -61,7 +61,7 @@
       </div>
 
     </section>
-    <div class="features-menu">
+    <div v-scrollanimation class="features-menu">
          
      <img :src="require('../Images/' + coffeeShop.menu)" />
         </div>
@@ -289,5 +289,17 @@ export default {
   -ms-transition: all 0.5s ease;
   transition: all 0.5s ease;
 }
+
+.before-enter{
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease-out;
+}
+
+.enter{
+  opacity: 1;
+  transform: translateX(0px)
+}
+
 
 </style>

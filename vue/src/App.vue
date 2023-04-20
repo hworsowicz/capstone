@@ -5,7 +5,7 @@
   <div id="app" >
     <header>
       <a class="logo">
-        <router-link class="nav-item" v-bind:to="{ name: 'home' }">
+        <router-link  class="nav-item" v-bind:to="{ name: 'home' }">
       
         <img src="./Images/newLogo.png"/> 
             </router-link>
@@ -14,14 +14,14 @@
       <nav id="nav">
         <ul>
           <li>
-            <router-link class="nav-item" v-bind:to="{ name: 'home' }">
+            <router-link v-scrollanimation class="nav-item" v-bind:to="{ name: 'home' }">
               
               <!-- This is a font awesome icon -->
               Home<transition name="pop"><span class="blue-filler"></span></transition>
             </router-link>
           </li>
           <li>
-            <router-link
+            <router-link v-scrollanimation
               class="nav-item"
               v-bind:to="{ name: 'logout' }"
               v-if="$store.state.token"
@@ -30,7 +30,7 @@
             </router-link>
           </li>
           <li>
-            <router-link
+            <router-link v-scrollanimation
               class="nav-item"
               v-bind:to="{ name: 'login' }"
               v-if="!$store.state.token"
@@ -39,13 +39,13 @@
             </router-link>
           </li>
           <li>
-             <router-link class="nav-item" v-bind:to="{ name: 'favorites' }"  v-if="$store.state.token">
+             <router-link v-scrollanimation class="nav-item" v-bind:to="{ name: 'favorites' }"  v-if="$store.state.token">
               
               <!-- This is a font awesome icon -->
               My Favorites<span class="blue-filler"></span></router-link>
           </li>
           <li>
-            <router-link
+            <router-link v-scrollanimation
               class="nav-item"
               v-bind:to="{ name: 'register' }"
               v-if="!$store.state.token"
@@ -53,12 +53,12 @@
             ></router-link>
           </li>
           <li>
-            <router-link v-bind:to="{ name: 'coffeeShops' }" class="nav-item"
+            <router-link v-scrollanimation v-bind:to="{ name: 'coffeeShops' }" class="nav-item"
               >&nbsp;&nbsp;Coffee Shops<span class="blue-filler"></span>
             </router-link>
           </li>
           <li>
-          <router-link v-bind:to="{ name: 'aboutus' }" 
+          <router-link v-scrollanimation v-bind:to="{ name: 'aboutus' }" 
                class="nav-item"
               >&nbsp;&nbsp;Meet the team<span class="blue-filler"></span>
             </router-link>
@@ -180,9 +180,8 @@ header nav ul li {
   left: 0;
   width: 100%;
   height: 100%;
-  border: solid;
-  border-color: black;
-  border-width: 0 2px 2px 0;
+  
+  box-shadow: 2px 2px black;
   background: #8FC1D4;
   border-radius: 30px;
   z-index: -1;
@@ -196,6 +195,8 @@ header nav ul li {
    transform: scale(1);
     opacity: 1;
 }
+
+
 
 
 
