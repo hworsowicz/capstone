@@ -102,7 +102,7 @@ h2{
   font-size:35px;
    font-family: 'Quicksand', sans-serif; 
   text-align:center;
-  padding-top: 200px;
+  padding-top: 450px;
   color: #fff;
 }
 .blog-wrapper{
