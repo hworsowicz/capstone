@@ -39,7 +39,7 @@
 
 
   <div class="home">
-    <h1>Find your closest cup of coffee</h1>
+    <h1 v-scrollanimation>Find your closest cup of coffee</h1>
    <google-map-search class="home-map-view"/>
    <!-- <map-details-page/> -->
   </div>
@@ -311,6 +311,17 @@ height: 100vh;
     font-size: 100px;
     text-shadow: 3px 3px black;
     
+}
+
+.before-enter{
+  opacity: 0;
+  transform: translateX(100px);
+  transition: all 1s ease-out;
+}
+
+.enter{
+  opacity: 1;
+  transform: translateX(0px)
 }
 
  
