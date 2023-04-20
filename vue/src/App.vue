@@ -3,6 +3,7 @@
      See https://getbootstrap.com/docs/4.5/getting-started/introduction/ for reference on bootstrap -->
 <template>
   <div id="app" >
+
     <header>
       <a class="logo">
         <router-link  class="nav-item" v-bind:to="{ name: 'home' }">
@@ -67,9 +68,15 @@
         </ul>
       </nav>
     </header>
-    <div class="body">
+    <section id="body-whole">
+    <body class="body">
     <router-view  class="view"/>
-    </div>
+    </body>
+    </section>
+     <footer class="footer">
+        <h4>Jolt&reg;</h4>
+        <p>Hi! Welcome to Jolt where it's 5am somewhere</p>
+  </footer>
   </div>
 </template>
 
@@ -92,6 +99,9 @@
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
     
+}
+#body-whole{
+  min-height: 80vh;
 }
 body{
   background-image: url('Images/background6.jpg');
@@ -196,7 +206,28 @@ header nav ul li {
     opacity: 1;
 }
 
-
+// styling for footer
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 1px;
+    font-weight: 300;
+    color: #fff;
+}
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    color: #fff;
+    background: #000;
+    opacity: 0.8;
+    content: '';
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    margin-top: 10px;
+}
 
 
 
