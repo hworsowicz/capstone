@@ -28,8 +28,8 @@
       </router-link>
         <button
           class="heart-icon"
-          v-on:click.prevent="addToUserFavorites($event)"
-          v-if="!coffeeShop.isFavorite"
+          v-on:click.prevent="addToUserFavorites($event)" 
+          v-if="!coffeeShop.isFavorite" 
         >
           <div class="heart-icon"></div>
         </button>
