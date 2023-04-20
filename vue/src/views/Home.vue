@@ -49,8 +49,8 @@ check directives folder in src for the logic -->
 
   <h2 v-scrollanimation>Articles</h2>
 
-<div class="blog-wrapper">
-  <div v-scrollanimation class="blog-card">
+<div v-scrollanimation class="blog-wrapper">
+  <div class="blog-card">
     <div class="card-img"><img src="../Images/article1.jpg">
       <h1>Brew Box</h1>
     </div>
@@ -58,7 +58,7 @@ check directives folder in src for the logic -->
     <div class="card-text"><p>The Coffee Brew Box! This very limited edition box will feature samples from 12 coffee roasters plus some extra goodies to enhance your at home coffee.</p></div>
     <div class="read-more"><a href="https://columbusunderground.com/the-coffee-festival-brew-box-is-back-dh1/">Read More</a></div>
   </div>
-  <div v-scrollanimation class="blog-card">
+  <div  class="blog-card">
     <div class="card-img"><img src="../Images/sliderfive.jpg">
       <h1>Coffee Trail</h1>
     </div>
@@ -68,7 +68,7 @@ check directives folder in src for the logic -->
 After just four stops, you earn a free Columbus coffee experience t-shirt.</p></div>
     <div class="read-more"><a href="https://www.columbusonthecheap.com/columbus-coffee-trail/">Read More</a></div>
   </div>
-   <div v-scrollanimation class="blog-card">
+   <div class="blog-card">
     <div class="card-img"><img src="../Images/slidertwo.jpg">
       <h1>Craft Coffee</h1>
     </div>
@@ -295,7 +295,7 @@ height: 100vh;
 // They slide the element in from ther left to the right.
 .before-enter{
   opacity: 0;
-  transform: translateX(-100px);
+  transform: translateY(100px);
   transition: all 1s ease-out;
 }
 

@@ -16,7 +16,7 @@
     />
     <GmapMap class="map-home-view" 
       :center="{ lat: 39.99594034364347, lng: -83.01712965671832 }"
-      :zoom="12.5"
+      :zoom="12.8"
       map-type-id="terrain"
       style="width: 1000px; height: 700px"
     >

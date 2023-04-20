@@ -80,8 +80,9 @@ export default {
  padding-top: 100px;
  color: #fff;
  text-transform: capitalize;
- font-weight: bold;
-  
+ text-shadow: 2px 2px black;
+ text-align: center;
+ 
 }
 .link{
   color: #fff;

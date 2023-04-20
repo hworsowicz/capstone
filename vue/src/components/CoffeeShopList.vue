@@ -135,7 +135,7 @@ iframe{
 /* Scroll animation below. Check directives/scrollanimation for js */
 .before-enter{
   opacity: 0;
-  transform: translateX(-100px);
+  transform: translateY(100px);
   transition: all 2s ease-out;
 }
 
