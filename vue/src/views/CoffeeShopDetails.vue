@@ -202,10 +202,7 @@ export default {
   color: #000;
   
 }
-.animate__fadeInLeft{
-  animation-duration: 1.7s;
-  animation-delay: 1s;
-}
+
 .features-menu{
     width: 90%;
   border-radius: 10px;

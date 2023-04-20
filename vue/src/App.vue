@@ -94,7 +94,7 @@
     
 }
 body{
-  background-image: url('Images/beans3.jpg');
+  background-image: url('Images/background6.jpg');
   min-height: 100%;
   background-repeat: no-repeat;
   background-position: center center;

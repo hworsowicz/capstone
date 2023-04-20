@@ -18,7 +18,7 @@
       :center="{ lat: 39.99594034364347, lng: -83.01712965671832 }"
       :zoom="12.5"
       map-type-id="terrain"
-      style="width: 1500px; height: 700px"
+      style="width: 1000px; height: 700px"
     >
       <DirectionsRenderer :directions="directions" />
       <GmapMarker :position="userPosition" />
@@ -188,29 +188,29 @@ export default {
 };
 </script>
 <style>
+
 .homeSearchAddress {
-  color: white;
+  color: black;
   font-size: 30px;
-  padding-right: 155px;
   
 }
 .list-coffee{
-  color: #fff;
+  color: black;
   position: relative;
 }
 .list-coffee:hover{
-  color: rgb(151, 196, 223);
+  color: rgb(31, 78, 107);
+  text-decoration: none;
 }
 
 .map-search{
     width: 100%;
-    border-radius: 30px 0 0 30px;
-    padding-right: 150px;
-    padding-top: 15px;
+   display: grid;
+place-items: center;
+margin: 20px;
     
 }
 .map-home-view{
    margin: 30px;
-   padding-left: 30px;
 }
 </style>
