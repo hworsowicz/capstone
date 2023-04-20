@@ -289,7 +289,7 @@ export default {
 
 .before-enter{
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(-100px);
   transition: all 1s ease-out;
 }
 

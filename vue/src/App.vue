@@ -3,6 +3,7 @@
      See https://getbootstrap.com/docs/4.5/getting-started/introduction/ for reference on bootstrap -->
 <template>
   <div id="app" >
+
     <header>
       <a class="logo">
         <router-link  class="nav-item" v-bind:to="{ name: 'home' }">
@@ -14,14 +15,14 @@
       <nav id="nav">
         <ul>
           <li>
-            <router-link v-scrollanimation class="nav-item" v-bind:to="{ name: 'home' }">
+            <router-link class="nav-item" v-bind:to="{ name: 'home' }">
               
               <!-- This is a font awesome icon -->
               Home<transition name="pop"><span class="blue-filler"></span></transition>
             </router-link>
           </li>
           <li>
-            <router-link v-scrollanimation
+            <router-link
               class="nav-item"
               v-bind:to="{ name: 'logout' }"
               v-if="$store.state.token"
@@ -30,7 +31,7 @@
             </router-link>
           </li>
           <li>
-            <router-link v-scrollanimation
+            <router-link 
               class="nav-item"
               v-bind:to="{ name: 'login' }"
               v-if="!$store.state.token"
@@ -39,13 +40,13 @@
             </router-link>
           </li>
           <li>
-             <router-link v-scrollanimation class="nav-item" v-bind:to="{ name: 'favorites' }"  v-if="$store.state.token">
+             <router-link class="nav-item" v-bind:to="{ name: 'favorites' }"  v-if="$store.state.token">
               
               <!-- This is a font awesome icon -->
               My Favorites<span class="blue-filler"></span></router-link>
           </li>
           <li>
-            <router-link v-scrollanimation
+            <router-link
               class="nav-item"
               v-bind:to="{ name: 'register' }"
               v-if="!$store.state.token"
@@ -53,12 +54,12 @@
             ></router-link>
           </li>
           <li>
-            <router-link v-scrollanimation v-bind:to="{ name: 'coffeeShops' }" class="nav-item"
+            <router-link v-bind:to="{ name: 'coffeeShops' }" class="nav-item"
               >&nbsp;&nbsp;Coffee Shops<span class="blue-filler"></span>
             </router-link>
           </li>
           <li>
-          <router-link v-scrollanimation v-bind:to="{ name: 'aboutus' }" 
+          <router-link v-bind:to="{ name: 'aboutus' }" 
                class="nav-item"
               >&nbsp;&nbsp;Meet the team<span class="blue-filler"></span>
             </router-link>
@@ -67,9 +68,15 @@
         </ul>
       </nav>
     </header>
-    <div class="body">
+    <section id="body-whole">
+    <body class="body">
     <router-view  class="view"/>
-    </div>
+    </body>
+    </section>
+     <footer class="footer">
+        <h4>Jolt&reg;</h4>
+        <p>Hi! Welcome to Jolt where it's 5am somewhere</p>
+  </footer>
   </div>
 </template>
 
@@ -92,6 +99,9 @@
     box-sizing: border-box;
     font-family: 'Quicksand', sans-serif;
     
+}
+#body-whole{
+  min-height: 80vh;
 }
 body{
   background-image: url('Images/background6.jpg');
@@ -196,7 +206,28 @@ header nav ul li {
     opacity: 1;
 }
 
-
+// styling for footer
+.footer h4{
+    margin-bottom: 25px;
+    margin-top: 1px;
+    font-weight: 300;
+    color: #fff;
+}
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 50px 0;
+    color: #fff;
+    background: #000;
+    opacity: 0.8;
+    content: '';
+    border-top-left-radius: 50% 100%;
+    border-top-right-radius: 50% 100%;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    margin-top: 10px;
+}
 
 
 

@@ -12,8 +12,7 @@
     </p>
     <gmap-place-input  class="map-search"
       @place_changed="setPlace"
-      placeholder="Enter your location"
-      
+      placeholder="  Enter your location"
     />
     <GmapMap class="map-home-view" 
       :center="{ lat: 39.99594034364347, lng: -83.01712965671832 }"
@@ -51,14 +50,15 @@ import { gmapApi } from "vue2-google-maps";
 import DirectionsRenderer from "../services/DirectionsRenderer";
 export default {
   components: { DirectionsRenderer },
-  data() {
-    return {
-      place: null,
-      directions: null,
-      selectedShop: null,
-      //destination will need to be a selected shop, which will be a list that is its own component
-    };
-  },
+data() {
+  return {
+    place: null,
+    directions: null,
+    selectedShop: null
+  
+  };
+},
+
   methods: {
     setPlace(place) {
       this.place = place;
@@ -191,16 +191,16 @@ export default {
 <style>
 
 .homeSearchAddress {
-  color: black;
+  color: white;
   font-size: 30px;
   
 }
 .list-coffee{
-  color: black;
+  color: white;
   position: relative;
 }
 .list-coffee:hover{
-  color: rgb(31, 78, 107);
+  color: #8fc1d4;
   text-decoration: none;
 }
 
@@ -214,5 +214,9 @@ margin: 20px;
 }
 .map-home-view{
    margin: 30px;
+}
+.map-search input[type="text"] {
+  border-radius: 50px;
+  width: 300px;
 }
 </style>

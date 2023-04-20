@@ -1,4 +1,6 @@
 <template>
+<!-- Note: v-scrollanimation is used through-out the project as a custom directive for animations on scroll
+check directives folder in src for the logic -->
 <section> 
 <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
   <div class="carousel-inner">
@@ -6,7 +8,7 @@
       <img src="../Images/newstack.jpg" class="d-block w-100" alt="...">
       <div class="absolute-div">
                         <div class="carousel-caption">
-                             <h3>Welcome to Jolt</h3>
+                             <h3 v-scrollanimation >Welcome to Jolt</h3>
                         </div>
                     </div>
     </div>
@@ -14,7 +16,7 @@
       <img src="../Images/newrelax.jpg" class="d-block w-100" alt="...">
         <div class="absolute-div">
                         <div class="carousel-caption">
-                             <h3>Welcome to Jolt</h3>
+                             <h3 v-scrollanimation>Where Columbus meets Coffee</h3>
                         </div>
                     </div>
     </div>
@@ -22,7 +24,7 @@
       <img  src="../Images/sliderthree.jpg" class="d-block w-100" alt="...">
         <div class="absolute-div">
                         <div class="carousel-caption">
-                            <h3>Welcome to Jolt</h3>
+                            <h3 v-scrollanimation>Find local coffee shops around Columbus</h3>
                         </div>
                     </div>
     </div>
@@ -39,16 +41,16 @@
 
 
   <div class="home">
-    <h1 v-scrollanimation>Find your closest cup of coffee</h1>
-   <google-map-search class="home-map-view"/>
+    <h1 class="closest-map-text" v-scrollanimation>Find your closest cup of coffee</h1>
+   <google-map-search v-scrollanimation class="home-map-view"/>
    <!-- <map-details-page/> -->
   </div>
 
 
-  <h2>Articles</h2>
+  <h2 v-scrollanimation>Articles</h2>
 
 <div class="blog-wrapper">
-  <div class="blog-card">
+  <div v-scrollanimation class="blog-card">
     <div class="card-img"><img src="../Images/article1.jpg">
       <h1>Brew Box</h1>
     </div>
@@ -56,7 +58,7 @@
     <div class="card-text"><p>The Coffee Brew Box! This very limited edition box will feature samples from 12 coffee roasters plus some extra goodies to enhance your at home coffee.</p></div>
     <div class="read-more"><a href="https://columbusunderground.com/the-coffee-festival-brew-box-is-back-dh1/">Read More</a></div>
   </div>
-  <div class="blog-card">
+  <div v-scrollanimation class="blog-card">
     <div class="card-img"><img src="../Images/sliderfive.jpg">
       <h1>Coffee Trail</h1>
     </div>
@@ -66,7 +68,7 @@
 After just four stops, you earn a free Columbus coffee experience t-shirt.</p></div>
     <div class="read-more"><a href="https://www.columbusonthecheap.com/columbus-coffee-trail/">Read More</a></div>
   </div>
-   <div class="blog-card">
+   <div v-scrollanimation class="blog-card">
     <div class="card-img"><img src="../Images/slidertwo.jpg">
       <h1>Craft Coffee</h1>
     </div>
@@ -76,10 +78,7 @@ After just four stops, you earn a free Columbus coffee experience t-shirt.</p></
     <div class="read-more"><a href="https://www.usatoday.com/story/travel/experience/food-and-wine/2018/03/14/columbus-ohio-craft-coffee/417588002/">Read More</a></div>
   </div>
 </div>
-  <section class="footer">
-        <h4>Jolt&reg;</h4>
-        <p>Hi! Welcome to Jolt where it's 5am somewhere</p>
-    </section>
+
 </section>
 
 
@@ -102,8 +101,9 @@ h2{
   font-size:35px;
    font-family: 'Quicksand', sans-serif; 
   text-align:center;
-  padding-top: 200px;
+  padding-top: 450px;
   color: #fff;
+  text-shadow: 2px 2px black;
 }
 .blog-wrapper{
   
@@ -159,6 +159,7 @@ h2{
         width:100%;
         color:white;
         font-family: 'Quicksand 27px', serif;
+        text-shadow: 2px 2px black;
       }
     }
     .card-details{
@@ -203,31 +204,9 @@ h2{
     }
   }
 }
-.footer h4{
-    margin-bottom: 25px;
-    margin-top: 1px;
-    font-weight: 300;
-    color: #fff;
-}
-.footer{
-    width: 100%;
-    text-align: center;
-    padding: 50px 0;
-    color: #fff;
-    background: #000;
-    opacity: 0.8;
-    content: '';
-    border-top-left-radius: 50% 100%;
-    border-top-right-radius: 50% 100%;
-    bottom: 0;
-    z-index: -1;
-    width: 100%;
-   
 
-
-}
 .carousel-caption {
-     width: 90%;
+    width: 90%;
     color: white;
     position: absolute;
     top: 50%;
@@ -273,7 +252,7 @@ h1{
   color: #fff;
   text-align: center;
   padding-top: 100px;
-  
+  text-shadow: 2px 2px black;
 }
 .home-map-view{
 display: grid;
@@ -312,10 +291,11 @@ height: 100vh;
     text-shadow: 3px 3px black;
     
 }
-
+// .before-enter and enter are the transition for v-scroll animation.
+// They slide the element in from ther left to the right.
 .before-enter{
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(-100px);
   transition: all 1s ease-out;
 }
 
@@ -323,6 +303,4 @@ height: 100vh;
   opacity: 1;
   transform: translateX(0px)
 }
-
- 
 </style>
